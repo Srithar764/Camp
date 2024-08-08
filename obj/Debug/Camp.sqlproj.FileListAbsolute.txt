@@ -1,0 +1,10 @@
+c:\Users\User\OneDrive - Arus\Documents\Project\Camp\Camp\bin\Debug\Camp.dacpac
+c:\Users\User\OneDrive - Arus\Documents\Project\Camp\Camp\obj\Debug\Camp.sqlproj.AssemblyReference.cache
+c:\Users\User\OneDrive - Arus\Documents\Project\Camp\Camp\obj\Debug\Model.xml
+c:\Users\User\OneDrive - Arus\Documents\Project\Camp\Camp\obj\Debug\refactor.xml
+c:\Users\User\OneDrive - Arus\Documents\Project\Camp\Camp\obj\Debug\postdeploy.sql
+c:\Users\User\OneDrive - Arus\Documents\Project\Camp\Camp\obj\Debug\predeploy.sql
+c:\Users\User\OneDrive - Arus\Documents\Project\Camp\Camp\obj\Debug\Camp.dll
+c:\Users\User\OneDrive - Arus\Documents\Project\Camp\Camp\obj\Debug\Camp.pdb
+c:\Users\User\OneDrive - Arus\Documents\Project\Camp\Camp\bin\Debug\Camp.dll
+c:\Users\User\OneDrive - Arus\Documents\Project\Camp\Camp\bin\Debug\Camp.pdb

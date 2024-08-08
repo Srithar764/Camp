@@ -1,0 +1,4251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="160" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="Camp.dll" />
+			<Metadata Name="FileName" Value="c:\Users\User\OneDrive - Arus\Documents\Project\Camp\Camp\obj\Debug\Camp.dll" />
+			<Metadata Name="AssemblyName" Value="Camp" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="c:\Users\User\OneDrive - Arus\Documents\Project\Camp\Camp\obj\Debug\Camp.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[Notifications]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[Camp].[Notifications].[is_read]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[(1)]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[is_active]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[(getdate())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[Notifications]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[Camp].[Notifications].[created_at]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Camp].[User_AppSection_Mapping].[user_appsection_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Camp].[Section].[section_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[Section]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Camp].[Notifications].[notification_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[Notifications]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+		</Element>
+		<Element Type="SqlSchema" Name="[Camp]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[Camp].[App_Catalog]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Catalog].[app_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Catalog].[app_name]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Catalog].[icon_url]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Catalog].[app_url]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Catalog].[description]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Catalog].[is_default]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Catalog].[last_updated_date]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Catalog].[is_active]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="4" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+		</Element>
+		<Element Type="SqlTable" Name="[Camp].[App_Section_Mapping]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Section_Mapping].[section_app_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Section_Mapping].[section_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Section_Mapping].[app_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Section_Mapping].[last_updated_date]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Section_Mapping].[is_active]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="8" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+		</Element>
+		<Element Type="SqlTable" Name="[Camp].[Department]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Department].[department_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Department].[name]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+		</Element>
+		<Element Type="SqlTable" Name="[Camp].[Designation]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Designation].[designation_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Designation].[title]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[Fk__App_Catalog__app_id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="11" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK__User_AppSection__section_app_id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK__User_AppSection__user_id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_ACA_Role_App_Mapping_role_id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Camp].[Role_App_Mapping].[role_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[Role_App_Mapping]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Camp].[Role].[role_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Camp].[Role]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_ACA.User_department_id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Camp].[User].[department_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Camp].[Department].[department_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Camp].[Department]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_ACA.User_designation_id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Camp].[User].[designation_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Camp].[Designation].[designation_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Camp].[Designation]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_ACA.User_manager_id_FK]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Camp].[User].[manager_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_ACA.User_Role_Mapping_role_id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Camp].[User_Role_Mapping].[role_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[User_Role_Mapping]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Camp].[Role].[role_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Camp].[Role]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_App_Section__section_id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Camp].[Section]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="12" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_Role_App_Mapping_app_id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Camp].[Role_App_Mapping].[app_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[Role_App_Mapping]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[InsertRoleSP]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @last_updated_date DATETIME = GETDATE();
+
+    INSERT INTO [Camp].[Role] 
+        (
+            [role_name], 
+            [description], 
+            [last_updated_date]
+        )
+    VALUES 
+        (
+            @role_name, 
+            @description, 
+            @last_updated_date
+        );
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Role]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Role].[role_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Role].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Role].[last_updated_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[InsertRoleSP].[@role_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[InsertRoleSP].[@description]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[InsertRoleSP].[@role_name]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[InsertRoleSP].[@description]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="461" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[InsertRoleSP]&#xD;&#xA;    @role_name NVARCHAR(50),&#xD;&#xA;    @description NVARCHAR(255)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[InsertUsersFromStaging]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    SET NOCOUNT ON;
+
+--Inserting Department
+
+MERGE Camp.Department AS Target
+USING dbo.Employee As Source
+ON Target.name = Source.Department
+WHEN NOT MATCHED THEN
+ INSERT ([name]) Values (source.Department);
+
+-- Inserting Designation
+MERGE Camp.Designation AS Target
+USING dbo.Employee As Source
+ON Target.title = Source.Designation
+WHEN NOT MATCHED THEN
+ INSERT (title) Values (source.Designation);
+
+-- CTE to prepare the staging data with department and designation information
+    WITH StagingData AS (
+        SELECT 
+            se.Emp_id,
+            se.[full_name],
+            se.[Email] AS email,
+            dp.department_id,
+            ds.designation_id,
+            us.user_id AS manager_id,
+            [last_login_date],
+			--CASE WHEN se.[full_name] = se.[Manager] THEN 0 ELSE 0 END AS is_self_manager,
+			se.[last_updated_date]
+        FROM
+            dbo.employee se
+        JOIN
+            Camp.Department dp ON se.[Department] = dp.name 
+        JOIN
+            Camp.Designation ds ON se.Designation = ds.title
+        LEFT JOIN
+            Camp.[User] us ON se.Manager = us.full_name
+    )
+
+    -- Merge data from StagingData into User table
+    MERGE Camp.[User] AS target
+    USING StagingData AS source
+    ON target.emp_id = source.emp_id
+    WHEN NOT MATCHED THEN
+        INSERT 
+		(
+		[emp_id],
+		[full_name], 
+		[email], 
+		[department_id],
+		[designation_id],
+		[manager_id],
+		[last_login_date],
+		[last_updated_date]
+		)
+        VALUES (
+		source.emp_id, 
+		source.full_name,
+		source.email,
+		source.department_id,
+		source.designation_id, 
+		source.Manager_id,
+        --CASE WHEN source.is_self_manager = 1 THEN NULL ELSE source.manager_id END,
+		source.[last_login_date],
+		GETDATE()
+		)
+    WHEN MATCHED THEN
+        UPDATE SET
+            target.full_name = source.full_name,
+            target.email = source.email,
+            target.department_id = source.department_id,
+            target.designation_id = source.designation_id,
+			target.manager_id = source.manager_id,
+           -- target.manager_id = CASE WHEN source.is_self_manager = 1 THEN NULL ELSE source.manager_id END,
+            target.last_login_date = source.[last_login_date],
+            target.last_updated_date = GETDATE()
+   WHEN  NOT MATCHED BY SOURCE
+		THEN DELETE ;
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Department]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Department].[name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Department]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Department].[name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Department]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Designation]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Designation].[title]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Designation]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Designation].[title]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Designation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Department]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Department].[name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Designation]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Designation].[title]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Manager]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[full_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[emp_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[full_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[email]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Department].[department_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Designation].[designation_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[last_login_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[last_updated_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[emp_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[emp_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[emp_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[full_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[email]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[department_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[designation_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[manager_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[last_login_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[last_updated_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[full_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[email]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Department].[department_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Designation].[designation_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[last_login_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[full_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[email]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[department_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[designation_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[manager_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[last_login_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[last_updated_date]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[Camp].[InsertUsersFromStaging].[CTE1].[StagingData]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[InsertUsersFromStaging].[CTE1].[StagingData].[Emp_id]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[Employee].[emp_id]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[InsertUsersFromStaging].[CTE1].[StagingData].[full_name]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[Employee].[full_name]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[InsertUsersFromStaging].[CTE1].[StagingData].[email]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[Employee].[email]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[InsertUsersFromStaging].[CTE1].[StagingData].[department_id]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[Department].[department_id]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[InsertUsersFromStaging].[CTE1].[StagingData].[designation_id]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[Designation].[designation_id]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[InsertUsersFromStaging].[CTE1].[StagingData].[manager_id]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[User].[user_id]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[InsertUsersFromStaging].[CTE1].[StagingData].[last_login_date]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[User].[last_login_date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[InsertUsersFromStaging].[CTE1].[StagingData].[last_updated_date]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[Employee].[last_updated_date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="2427" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[InsertUsersFromStaging]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[Camp].[Notifications]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Notifications].[notification_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Notifications].[user_id]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Notifications].[message]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Notifications].[is_read]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="3" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Notifications].[created_at]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="5" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="9" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA_Role_App_Mapping_role_app_id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Camp].[Role_App_Mapping].[role_app_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[Role_App_Mapping]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA.App_Catalog_app_id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Camp].[App_Catalog].[app_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="10" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA.Department_department_id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Camp].[Department].[department_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[Department]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="13" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA.Designation_designation_id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Camp].[Designation].[designation_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[Designation]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="14" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA.Role_role_id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Camp].[Role].[role_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[Role]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA.User_Role_Mapping_user_role_id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Camp].[User_Role_Mapping].[user_role_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[User_Role_Mapping]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA.User_user_id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Camp].[User].[user_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
+		</Element>
+		<Element Type="SqlTable" Name="[Camp].[Role]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Role].[role_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Role].[role_name]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Role].[description]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Role].[last_updated_date]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="24" />
+		</Element>
+		<Element Type="SqlTable" Name="[Camp].[Role_App_Mapping]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Role_App_Mapping].[role_app_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Role_App_Mapping].[app_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Role_App_Mapping].[role_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Role_App_Mapping].[last_updated_date]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="23" />
+			<AttachedAnnotation Disambiguator="17" />
+			<AttachedAnnotation Disambiguator="22" />
+		</Element>
+		<Element Type="SqlTable" Name="[Camp].[Section]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Section].[section_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Section].[section_name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Section].[is_active]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[Section].[last_updated_date]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="7" />
+		</Element>
+		<Element Type="SqlTable" Name="[Camp].[User]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User].[user_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User].[emp_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User].[full_name]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User].[email]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User].[profile_url]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User].[designation_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User].[department_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User].[manager_id]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User].[last_login_date]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User].[last_updated_date]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="26" />
+			<AttachedAnnotation Disambiguator="18" />
+			<AttachedAnnotation Disambiguator="19" />
+			<AttachedAnnotation Disambiguator="20" />
+		</Element>
+		<Element Type="SqlTable" Name="[Camp].[User_AppSection_Mapping]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User_AppSection_Mapping].[user_appsection_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User_AppSection_Mapping].[user_id]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User_AppSection_Mapping].[section_app_id]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User_AppSection_Mapping].[is_active]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User_AppSection_Mapping].[last_updated_date]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="6" />
+			<AttachedAnnotation Disambiguator="15" />
+			<AttachedAnnotation Disambiguator="16" />
+		</Element>
+		<Element Type="SqlTable" Name="[Camp].[User_Role_Mapping]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User_Role_Mapping].[user_role_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User_Role_Mapping].[user_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User_Role_Mapping].[role_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User_Role_Mapping].[last_updated_date]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="25" />
+			<AttachedAnnotation Disambiguator="21" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_addapps]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;-- This helps prevent extra result sets from interfering with SELECT statements.
+
+	DECLARE @current_date DATETIME = GETDATE();
+	DECLARE @app_id INT;
+	DECLARE @sectionID_Internal INT = NULL
+
+	SELECT @sectionID_Internal = [section_id]
+	FROM Camp.Section
+	WHERE [section_name] = 'Arus Internals'
+
+	SET @sectionID_Internal = ISNULL(@sectionID_Internal, 0)
+
+	-- Check if the app already exists
+	IF NOT EXISTS (
+			SELECT 1
+			FROM [Camp].[App_Catalog]
+			WHERE [app_name] = @appname
+			)
+	BEGIN
+		-- Insert new app into App_Catalog
+		INSERT INTO [Camp].[App_Catalog] (
+			[app_name]
+			,[icon_url]
+			,[app_url]
+			,[description]
+			,[is_default]
+			,[last_updated_date]
+			)
+		VALUES (
+			@appname
+			,@iconurl
+			,@appurl
+			,@description
+			,IIF(@sectionID_Internal = @Section_id, 1, 0)
+			,@current_date
+			);
+
+		SELECT @app_id = [app_id]
+		FROM [Camp].[App_Catalog]
+		WHERE [app_name] = @appname
+
+		-- Update existing mapping in App_Section_Mapping
+		MERGE INTO [Camp].[App_Section_Mapping] AS TARGET
+		USING (
+			SELECT @app_id AS [appid]
+				,@section_id AS [sectionid]
+				,1 AS [isactive]
+			) AS SOURCE
+			ON TARGET.[app_id] = SOURCE.[appid]
+		WHEN MATCHED
+			THEN
+				UPDATE
+				SET TARGET.[section_id] = SOURCE.[sectionid]
+					,TARGET.[last_updated_date] = @current_date
+		WHEN NOT MATCHED
+			THEN
+				INSERT (
+					[section_id]
+					,[app_id]
+					,[last_updated_date]
+					,[is_active]
+					)
+				VALUES (
+					SOURCE.[sectionid]
+					,SOURCE.[appid]
+					,@current_date
+					,SOURCE.[isactive]
+					);
+
+		SET @result = 1
+	END
+	ELSE
+	BEGIN
+		SET @result = - 1
+
+		RAISERROR (
+				'Appname already exists. Please enter new appname..!'
+				,16
+				,1
+				);
+	END
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@appname]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[icon_url]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_url]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[is_default]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[last_updated_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@iconurl]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@appurl]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@description]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@Section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@Section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[last_updated_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[last_updated_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@result]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_addapps].[@appname]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_addapps].[@iconurl]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_addapps].[@appurl]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_addapps].[@description]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_addapps].[@Section_id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_addapps].[@result]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1977" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_addapps] (&#xD;&#xA;&#x9;@appname VARCHAR(50)&#xD;&#xA;&#x9;,@iconurl NVARCHAR(MAX)&#xD;&#xA;&#x9;,@appurl NVARCHAR(MAX)&#xD;&#xA;&#x9;,@description NVARCHAR(MAX)&#xD;&#xA;&#x9;,@Section_id INT&#xD;&#xA;&#x9;,@result SMALLINT OUTPUT&#xD;&#xA;&#x9;)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_AppLoadProc]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+
+	DECLARE @sectionID_Verify INT = NULL
+
+	SELECT @sectionID_Verify = [section_id]
+	FROM Camp.Section
+	WHERE [section_name] = 'Arus Internals'
+
+	IF @sectionID = @sectionID_Verify
+	BEGIN
+		SELECT ROW_NUMBER() OVER (
+				ORDER BY ASM.[section_app_id] ASC
+				) AS [SectionAppId]
+			,S.section_id AS [SectionId]
+			,S.Section_name AS [SectionName]
+			,AC.app_id AS [ApplicationID]
+			,AC.[app_name] AS [ApplicationName]
+			,AC.icon_url AS [AppImage]
+			,AC.app_url AS [AppURL]
+			,AC.[description]
+			,AC.last_updated_date AS [AppUpdatedDate]
+		FROM Camp.App_Section_Mapping ASM
+		JOIN Camp.Section S ON ASM.Section_id = S.Section_id
+		JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
+		WHERE S.section_id = @sectionID
+			AND S.is_active = 1
+			AND ASM.is_active = 1
+			AND AC.is_active = 1
+	END
+	ELSE IF @sectionID = 1
+	BEGIN
+		SELECT ROW_NUMBER() OVER (
+				ORDER BY ASM.[section_app_id] ASC
+				) AS [SectionAppId]
+			,S.section_id AS [SectionId]
+			,S.Section_name AS [SectionName]
+			,AC.app_id AS [ApplicationID]
+			,AC.[app_name] AS [ApplicationName]
+			,AC.icon_url AS [AppImage]
+			,AC.app_url AS [AppURL]
+			,AC.[description]
+			,AC.last_updated_date AS [AppUpdatedDate]
+		FROM Camp.App_Section_Mapping ASM
+		JOIN Camp.Section S ON ASM.Section_id = S.Section_id
+		JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
+		WHERE S.section_id = @sectionID_Verify
+			AND S.is_active = 1
+			AND ASM.is_active = 1
+			AND AC.is_active = 1
+		
+		UNION ALL
+		
+		SELECT uasm.section_app_id AS [SectionAppId]
+			,S.section_id AS [SectionId]
+			,S.Section_name AS [SectionName]
+			,AC.app_id AS [ApplicationID]
+			,AC.[app_name] AS [ApplicationName]
+			,AC.icon_url AS [AppImage]
+			,AC.app_url AS [AppURL]
+			,AC.[description]
+			,AC.last_updated_date AS [AppUpdatedDate]
+		FROM Camp.[user] U
+		JOIN [Camp].[User_AppSection_Mapping] uasm ON uasm.[user_id] = u.[user_id]
+		JOIN Camp.App_Section_Mapping ASM ON ASM.section_app_id = uasm.section_app_id
+		JOIN Camp.Section S ON ASM.Section_id = S.Section_id
+		JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
+		WHERE u.[user_id] = @user_id
+			AND S.is_active = 1
+			AND ASM.is_active = 1
+			AND AC.is_active = 1
+			AND UASM.[is_active] = 1
+	END
+	ELSE
+	BEGIN
+		SELECT uasm.section_app_id AS [SectionAppId]
+			,S.section_id AS [SectionId]
+			,S.Section_name AS [SectionName]
+			,AC.app_id AS [ApplicationID]
+			,AC.[app_name] AS [ApplicationName]
+			,AC.icon_url AS [AppImage]
+			,AC.app_url AS [AppURL]
+			,AC.[description]
+			,AC.last_updated_date AS [AppUpdatedDate]
+		FROM Camp.[user] U
+		JOIN [Camp].[User_AppSection_Mapping] uasm ON uasm.[user_id] = u.[user_id]
+		JOIN Camp.App_Section_Mapping ASM ON ASM.section_app_id = uasm.section_app_id
+		JOIN Camp.Section S ON ASM.Section_id = S.Section_id
+		JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
+		WHERE u.[user_id] = @user_id
+			AND S.[section_id] = ISNULL(@sectionID, S.[section_id])
+			AND S.is_active = 1
+			AND ASM.is_active = 1
+			AND AC.is_active = 1
+			AND UASM.[is_active] = 1
+	END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_AppLoadProc].[@sectionID]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[icon_url]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_url]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[last_updated_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[icon_url]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_url]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[last_updated_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_AppLoadProc].[@user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_AppLoadProc].[@user_id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_AppLoadProc].[@sectionID]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[NULL]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="3639" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_AppLoadProc] (&#xD;&#xA;/*&#xD;&#xA;Author: Anushka Parasuraman&#xD;&#xA;Created Date: 23-Jul-2024&#xD;&#xA;About SP: Fetching User App details to App&#xD;&#xA;&#xD;&#xA;Sample Execution:&#xD;&#xA;&#xD;&#xA;EXEC [Camp].[usp_AppLoadProc] @user_id = 20, @sectionID = 2&#xD;&#xA;&#xD;&#xA;*/&#xD;&#xA;/* &#xD;&#xA;SP Change History Capture&#xD;&#xA;-------------------------------------------------------------------&#xD;&#xA;Date&#x9;&#x9;&#x9;ChangeBy&#x9;&#x9;Reason&#xD;&#xA;09-07-2024&#x9;&#x9;Anushka P&#x9;&#x9;Initial Write&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;-------------------------------------------------------------------&#xD;&#xA;*/&#xD;&#xA;&#x9;@user_id INT&#xD;&#xA;&#x9;,@sectionID INT = NULL&#xD;&#xA;&#x9;)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_GetAndMarkUserNotifications]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    -- Select the notifications for the user
+    SELECT 
+        notification_id, 
+        Message, 
+        is_read, 
+        created_at
+    FROM 
+        Notifications
+    WHERE 
+        user_id = @UserID
+    ORDER BY 
+        created_at DESC;
+
+    -- Mark the notifications as read
+    --UPDATE Notifications
+    --SET is_read = 0
+    --WHERE user_id = @UserID;
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[Camp].[Notifications]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Notifications].[notification_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Notifications].[message]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Notifications].[is_read]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Notifications].[created_at]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Notifications].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_GetAndMarkUserNotifications].[@UserID]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_GetAndMarkUserNotifications].[@UserID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="473" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_GetAndMarkUserNotifications]&#xD;&#xA;    @UserID INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_getappcatalog]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	--DECLARE @User_Id INT = 37;
+	--DECLARE @isdelete bit =0;
+	SELECT ASM.section_app_id
+		,U.[user_id]
+		,AC.[app_id]
+		,AC.[app_name]
+		,AC.icon_url
+		,AC.[description]
+		,@isdelete as isdelete
+		,  CASE 
+        WHEN UAM.user_appsection_id IS NULL AND AC.is_default = 0 THEN 1
+        ELSE 0
+    END AS [is_active]
+		--,IIF((UAM.user_appsection_id IS NULL, 1, 0) OR (AC.is_default = 1,0,1)) AS [is_active]
+		
+	--, UAM.*
+	FROM [camp].[App_Catalog] AC WITH (NOLOCK)
+	JOIN (
+		SELECT *
+		FROM [camp].[User] WITH (NOLOCK)
+		WHERE [user_id] = @User_Id
+		) U ON 1 = 1
+	INNER JOIN [camp].[App_Section_Mapping] ASM ON ASM.[app_id] = AC.[app_id]
+	LEFT JOIN [Camp].[User_AppSection_Mapping] UAM ON UAM.[section_app_id] = ASM.[section_app_id]
+		AND UAM.[user_id] = U.[user_id]
+		Where ASM.[is_active] = 1;
+		
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_getappcatalog].[@User_Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[icon_url]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_getappcatalog].[@isdelete]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[user_appsection_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[is_default]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_getappcatalog].[@User_Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_getappcatalog].[@isdelete]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="917" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_getappcatalog] (@User_Id INT,@isdelete bit =0)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_GetSectionlistFordropdown]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    SET NOCOUNT ON;
+
+	SELECT [section_id]
+				,[section_name]
+				--,[is_active]
+			FROM [Camp].[Section]
+			where is_active =1
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[Camp].[Section]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[is_active]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="212" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_GetSectionlistFordropdown]&#xD;&#xA;   &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_GetSectionsForMenuBar]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT DISTINCT @user_id [user_id]
+		,s.section_id
+		,s.section_name
+	FROM Camp.App_Section_Mapping ASM
+	JOIN Camp.Section S ON ASM.Section_id = S.Section_id
+	JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
+	WHERE ASM.is_active = 1
+		AND AC.is_active = 1
+		AND S.section_id IN (
+			SELECT [section_id]
+			FROM Camp.Section
+			WHERE [section_name] IN (
+					'Arus Internals'
+					,'All Apps'
+					)
+				AND [is_active] = 1
+			)
+	
+	UNION
+	
+	SELECT DISTINCT U.[user_id]
+		,s.section_id
+		,s.section_name
+	FROM Camp.[user] U
+	JOIN [Camp].[User_AppSection_Mapping] uasm ON uasm.[user_id] = u.[user_id]
+	JOIN Camp.App_Section_Mapping ASM ON ASM.section_app_id = uasm.section_app_id
+	JOIN Camp.Section S ON ASM.Section_id = S.Section_id
+	JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
+	WHERE u.[user_id] = @user_id
+		AND S.is_active = 1
+		AND ASM.is_active = 1
+		AND AC.is_active = 1
+		AND UASM.[is_active] = 1
+
+	UNION 
+	 
+	 SELECT DISTINCT @user_id [user_id]
+			, Section_id 
+			,Section_name
+			FROM Camp.Section 
+		    WHERE Section_id = 1
+
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_GetSectionsForMenuBar].[@user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_GetSectionsForMenuBar].[@user_id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1188" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_GetSectionsForMenuBar] @user_id INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_GetUserNotifications]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    -- Declare a table variable to hold the result
+    DECLARE @RecentNotification TABLE (
+        notification_id INT,
+        Message NVARCHAR(MAX),
+        is_read BIT,
+        created_at DATETIME
+    );
+
+    -- Select the most recent notification for the specified user
+    INSERT INTO @RecentNotification
+    SELECT TOP 1 
+        notification_id, 
+        Message, 
+        is_read, 
+        created_at
+    FROM Notifications
+    WHERE user_id = @UserID
+    ORDER BY created_at DESC;
+
+    -- Update all notifications as read (1) for the specified user
+    UPDATE Notifications
+    SET is_read = 1
+    WHERE user_id = @UserID;
+
+    -- Return the most recent notification
+    SELECT *
+    FROM @RecentNotification;
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[Camp].[Notifications]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Notifications].[notification_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Notifications].[message]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Notifications].[is_read]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Notifications].[created_at]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Notifications].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_GetUserNotifications].[@UserID]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[Camp].[usp_GetUserNotifications].[@RecentNotification]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[Camp].[usp_GetUserNotifications].[@RecentNotification].[notification_id]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[Camp].[usp_GetUserNotifications].[@RecentNotification].[Message]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Property Name="IsMax" Value="True" />
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[Camp].[usp_GetUserNotifications].[@RecentNotification].[is_read]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[bit]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[Camp].[usp_GetUserNotifications].[@RecentNotification].[created_at]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[datetime]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_GetUserNotifications].[@UserID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="830" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_GetUserNotifications]&#xD;&#xA;    @UserID INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_LoginCheck]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	DECLARE @Userid INT;
+	
+	-- Retrieve the user_id based on the provided email
+	SELECT @Userid = [user_id]
+	FROM [camp].[User]
+	WHERE email = @Email;
+
+	IF @Userid IS NOT NULL
+	BEGIN
+		-- User details with department, designation, and admin role
+		SELECT U.[user_id] AS [UserID]
+			,U.emp_id AS [EmployeeID]
+			,U.full_name AS [EmployeeName]
+			,U.email AS [Email]
+			,M.email AS [ManagerEmail]
+			,M.emp_id AS [ManagerID]
+			,M.[full_name] AS [ManagerName]
+			,DP.[name] AS [DepartmentName]
+			,DG.[title] AS [Designation]
+			,IIF(R.[role_name] IS NOT NULL, 1, 0) AS [IsAdmin]
+		FROM camp.[User] U WITH (NOLOCK)
+		INNER JOIN Camp.[Department] DP WITH (NOLOCK) ON DP.[department_id] = U.[department_id]
+		INNER JOIN Camp.[Designation] DG WITH (NOLOCK) ON DG.[designation_id] = U.[designation_id]
+		LEFT JOIN Camp.[User] M WITH (NOLOCK) ON U.[manager_id] = M.[user_id]
+		LEFT JOIN Camp.[User_Role_Mapping] URM WITH (NOLOCK) ON U.[user_id] = URM.[user_id]
+		LEFT JOIN Camp.[Role] R WITH (NOLOCK) ON R.[role_id] = URM.[role_id]
+			AND R.[role_name] = 'Admin'
+		WHERE U.[user_id] = @Userid;
+
+		SET @result = 1;
+			 --Section details with Status
+			SELECT [section_id]
+				,[section_name]
+				,[is_active]
+			FROM [Camp].[Section]
+	END
+	ELSE
+	BEGIN
+		SET @result = - 1;
+	END
+
+	-- Output the result
+	SELECT @result AS result;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[email]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_LoginCheck].[@Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Department]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Department].[department_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[department_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Designation]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Designation].[designation_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[designation_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[manager_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_Role_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_Role_Mapping].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Role]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Role].[role_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_Role_Mapping].[role_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Role].[role_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[emp_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[full_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[email]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[email]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[emp_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[full_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Department].[name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Designation].[title]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_LoginCheck].[@result]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[is_active]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_LoginCheck].[@Email]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_LoginCheck].[@result]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1985" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_LoginCheck]&#xD;&#xA;/*&#xD;&#xA;Author: Anushka Parasuraman&#xD;&#xA;Created Date: 08-Jul-2024&#xD;&#xA;About SP: Fetching User &amp; Section details to Login Page&#xD;&#xA;&#xD;&#xA;Sample Execution:&#xD;&#xA;&#xD;&#xA;DECLARE @Email VARCHAR(50) = 'anushka.p@arus.co.in';&#xD;&#xA;DECLARE @result SMALLINT;&#xD;&#xA;&#xD;&#xA;EXEC [Camp].[usp_LoginCheck] @Email, @result OUTPUT;&#xD;&#xA;&#xD;&#xA;*/&#xD;&#xA;/* &#xD;&#xA;SP Change History Capture&#xD;&#xA;-------------------------------------------------------------------&#xD;&#xA;Date&#x9;&#x9;&#x9;ChangeBy&#x9;&#x9;Reason&#xD;&#xA;09-07-2024&#x9;&#x9;Anushka P&#x9;&#x9;Initial Write&#xD;&#xA;&#xD;&#xA;-------------------------------------------------------------------&#xD;&#xA;*/&#xD;&#xA;   @Email VARCHAR(50)&#xD;&#xA;&#x9;,@result SMALLINT OUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_MoveToSection]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    DECLARE @newsectionid INT;
+    DECLARE @appid INT;
+    DECLARE @currentsectionid INT;
+    DECLARE @section_app_id INT;
+    DECLARE @new_section_app_id INT;
+
+    -- Get the section_id of the new section
+    SELECT @newsectionid = section_id
+    FROM [Camp].[Section]
+    WHERE section_name = @sectionname;
+
+    -- Retrieve app_id if app exists
+    IF EXISTS (SELECT 1 FROM [Camp].[App_Catalog] WHERE [app_name] = @appname)
+    BEGIN
+        SELECT @appid = [app_id]
+        FROM [Camp].[App_Catalog]
+        WHERE [app_name] = @appname;
+    END
+
+    -- Get the current section_id for the given app
+    SELECT @currentsectionid = section_id
+    FROM [Camp].[App_Section_Mapping]
+    WHERE app_id = @appid AND is_active = 1;
+
+    -- Deactivate the current mapping if it exists
+    IF @currentsectionid IS NOT NULL
+    BEGIN
+        UPDATE [Camp].[App_Section_Mapping]
+        SET is_active = 0
+        WHERE section_id = @currentsectionid AND app_id = @appid;
+    END
+
+    -- Check if the new section_id and app_id combination exists in App_Section_Mapping
+    SELECT @section_app_id = section_app_id
+    FROM [Camp].[App_Section_Mapping]
+    WHERE section_id = @newsectionid AND app_id = @appid;
+
+    -- If the combination does not exist, create a new mapping
+    IF @section_app_id IS NULL
+    BEGIN
+        INSERT INTO [Camp].[App_Section_Mapping] (section_id, app_id, last_updated_date, is_active)
+        VALUES (@newsectionid, @appid, GETDATE(), 1); -- Assuming 1 means active
+
+        -- Retrieve the newly created section_app_id
+        SELECT @new_section_app_id = section_app_id
+        FROM [Camp].[App_Section_Mapping]
+        WHERE section_id = @newsectionid AND app_id = @appid AND is_active = 1;
+    END
+    ELSE
+    BEGIN
+        -- Update the existing mapping to active
+        UPDATE [Camp].[App_Section_Mapping]
+        SET is_active = 1, last_updated_date = GETDATE()
+        WHERE section_app_id = @section_app_id;
+
+        -- Set @new_section_app_id to the existing section_app_id
+        SET @new_section_app_id = @section_app_id;
+    END
+
+    -- If the new section is inactive, make it active
+    IF EXISTS (SELECT 1 FROM [Camp].[Section] WHERE section_id = @newsectionid AND is_active = 0)
+    BEGIN
+        UPDATE [Camp].[Section]
+        SET is_active = 1
+        WHERE section_id = @newsectionid;
+    END
+
+    -- Update User_AppSection_Mapping to reflect the new section_app_id
+    UPDATE [Camp].[User_AppSection_Mapping]
+    SET section_app_id = @new_section_app_id, last_updated_date = GETDATE()
+    WHERE section_app_id IN (
+        SELECT section_app_id
+        FROM [Camp].[App_Section_Mapping]
+        WHERE app_id = @appid AND section_id = @currentsectionid
+    );
+
+    -- If the current section becomes inactive due to no active app, make it inactive
+    IF NOT EXISTS (
+        SELECT 1
+        FROM [Camp].[App_Section_Mapping]
+        WHERE section_id = @currentsectionid AND is_active = 1
+    )
+    BEGIN
+        UPDATE [Camp].[Section]
+        SET is_active = 0
+        WHERE section_id = @currentsectionid;
+    END
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_MoveToSection].[@sectionname]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_MoveToSection].[@appname]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[last_updated_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[last_updated_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_MoveToSection].[@sectionname]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_MoveToSection].[@appname]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="3262" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_MoveToSection]&#xD;&#xA;    @sectionname VARCHAR(50),&#xD;&#xA;    @appname VARCHAR(50)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_SaveManageSections]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+
+	DECLARE @current_date DATETIME = GETDATE();
+
+	-- Perform the action based on the input parameter @IsDelete
+	IF @IsDelete = 0
+	BEGIN
+		
+		IF EXISTS (
+				SELECT 1
+				FROM [Camp].[Section]
+				WHERE section_name = @sectionname
+					AND is_active = 0
+				)
+		BEGIN
+			UPDATE [Camp].[Section]
+			SET is_active = 1 
+				,last_updated_date = @current_date
+			WHERE section_name = @sectionname;
+
+			SET @Result = 2
+		END
+		ELSE IF NOT EXISTS (
+				SELECT 1
+				FROM [Camp].[Section]
+				WHERE section_name = @sectionname
+				)
+		BEGIN
+			INSERT INTO [Camp].[Section] (
+				section_name
+				,is_active
+				,last_updated_date
+				)
+			VALUES (
+				@sectionname
+				,1
+				,@current_date
+				);
+
+			SET @Result = 1
+		END
+	END
+	ELSE IF @IsDelete = 1
+	BEGIN
+		-- Set is_active to 0 for the section in Camp.Section
+		UPDATE [Camp].[Section]
+		SET is_active = 0
+			,last_updated_date = @current_date
+		WHERE section_id = @sectionid;
+
+		-- Delete the section mapping
+	DELETE FROM [Camp].[User_AppSection_Mapping]
+WHERE section_app_id IN (
+    SELECT [section_app_id]
+    FROM [Camp].[App_Section_Mapping]
+    WHERE section_id =@sectionid
+);
+
+		SET @Result = 3
+	END
+	ELSE
+	BEGIN
+		SET @Result = - 1
+	END;
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_SaveManageSections].[@IsDelete]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_SaveManageSections].[@sectionname]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[last_updated_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_SaveManageSections].[@Result]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_SaveManageSections].[@sectionid]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveManageSections].[@userid]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveManageSections].[@sectionname]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveManageSections].[@sectionid]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[NULL]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveManageSections].[@IsDelete]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveManageSections].[@Result]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1550" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_SaveManageSections] (&#xD;&#xA;&#x9; @userid INT&#xD;&#xA;&#x9;,@sectionname VARCHAR(100)&#xD;&#xA;&#x9;,@sectionid INT = NULL /*Sectionid applicable for UPDATE/DELETE action*/&#xD;&#xA;&#x9;,@IsDelete BIT = 0 /*Action (0-Delete, 1-Insert/Update)*/&#xD;&#xA;&#x9;,@Result SMALLINT OUTPUT&#xD;&#xA;&#x9;)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_SaveUserAppSection]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	DECLARE @current_date DATETIME = GETDATE();
+
+	IF @IsDelete = 0
+	BEGIN
+		-- Insert or update the User_AppSection table for the specific user
+		MERGE INTO [Camp].[User_AppSection_Mapping] AS target
+		USING (
+			SELECT @userid AS [User_Id],
+				   @section_app_id AS section_app_id
+		) AS source
+		ON (
+			target.[User_Id] = source.[User_Id]
+			AND target.section_app_id = source.section_app_id
+		)
+		WHEN NOT MATCHED THEN
+			INSERT (
+				[User_Id],
+				section_app_id,
+				is_active,
+				last_updated_date
+			)
+			VALUES (
+				source.[User_Id],
+				source.section_app_id,
+				1,
+				GETDATE()
+			)
+		WHEN MATCHED AND target.is_active = 0 THEN
+			UPDATE
+			SET target.is_active = 1,
+				target.last_updated_date = GETDATE();
+	END;
+	ELSE IF @IsDelete = 1
+	BEGIN
+		-- Set is_active to 0 for the specific user and section
+		UPDATE [Camp].[User_AppSection_Mapping]
+		SET is_active = 0,
+			last_updated_date = @current_date
+		WHERE [User_Id] = @userid
+			AND section_app_id = @section_app_id;
+
+		-- Optionally, delete the specific user-section mapping if needed
+		 DELETE FROM [Camp].[User_AppSection_Mapping]
+		 WHERE [User_Id] = @userid
+		 	AND section_app_id = @section_app_id;
+
+	END;
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_SaveUserAppSection].[@IsDelete]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_SaveUserAppSection].[@userid]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_SaveUserAppSection].[@section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_SaveUserAppSection].[@userid]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_SaveUserAppSection].[@section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[last_updated_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[last_updated_date]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveUserAppSection].[@userid]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveUserAppSection].[@section_app_id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveUserAppSection].[@IsDelete]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1374" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_SaveUserAppSection] (&#xD;&#xA;&#x9;@userid INT,&#xD;&#xA;&#x9;@section_app_id INT,&#xD;&#xA;&#x9;@IsDelete BIT = 0&#xD;&#xA;)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_UpdateNotificationsToUnread]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    -- Update all notifications to unread (0) for the specified user
+    UPDATE Notifications
+    SET is_read = 0
+    WHERE user_id = @UserID;
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[Camp].[Notifications]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Notifications].[is_read]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Notifications].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_UpdateNotificationsToUnread].[@UserID]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_UpdateNotificationsToUnread].[@UserID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="238" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_UpdateNotificationsToUnread]&#xD;&#xA;    @UserID INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Employee]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[user_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[emp_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[full_name]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[email]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[profile_url]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[Designation]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[Department]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[Manager]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[last_updated_date]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[teams_name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="200" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[gender]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Employee].[is_active]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FilegroupForTextImage">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+	</Model>
+</DataSchemaModel>
