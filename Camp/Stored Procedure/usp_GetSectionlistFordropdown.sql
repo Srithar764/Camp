@@ -6,7 +6,6 @@ BEGIN
 
 	SELECT [section_id]
 				,[section_name]
-				--,[is_active]
 			FROM [Camp].[Section]
 			where is_active =1
 END;

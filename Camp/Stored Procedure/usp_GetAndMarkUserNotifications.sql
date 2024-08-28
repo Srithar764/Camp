@@ -15,8 +15,4 @@ BEGIN
     ORDER BY 
         created_at DESC;
 
-    -- Mark the notifications as read
-    --UPDATE Notifications
-    --SET is_read = 0
-    --WHERE user_id = @UserID;
 END;

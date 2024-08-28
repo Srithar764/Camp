@@ -46,22 +46,6 @@
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[Camp].[Notifications]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[Camp].[Notifications].[is_read]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
 				<Value><![CDATA[(1)]]></Value>
 			</Property>
 			<Relationship Name="DefiningTable">
@@ -74,7 +58,7 @@
 					<References Name="[Camp].[App_Catalog].[is_active]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -88,6 +72,22 @@
 			<Relationship Name="ForColumn">
 				<Entry>
 					<References Name="[Camp].[Notifications].[created_at]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[Notifications]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[Camp].[Notifications].[is_read]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
@@ -136,7 +136,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
+								<References Name="[Camp].[Notifications].[notification_id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -144,7 +144,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping]" />
+					<References Name="[Camp].[Notifications]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
@@ -155,7 +155,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[Camp].[Notifications].[notification_id]" />
+								<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -163,7 +163,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[Camp].[Notifications]" />
+					<References Name="[Camp].[App_Section_Mapping]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
@@ -306,7 +306,23 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="4" />
+						<AttachedAnnotation Disambiguator="3" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[App_Catalog].[section_id]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
 					</Element>
 				</Entry>
 			</Relationship>
@@ -315,7 +331,7 @@
 					<References Name="[Camp]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
 		</Element>
 		<Element Type="SqlTable" Name="[Camp].[App_Section_Mapping]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -406,9 +422,9 @@
 					<References Name="[Camp]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="8" />
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<AttachedAnnotation Disambiguator="9" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
 		</Element>
 		<Element Type="SqlTable" Name="[Camp].[Department]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -453,7 +469,7 @@
 					<References Name="[Camp]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
 		</Element>
 		<Element Type="SqlTable" Name="[Camp].[Designation]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -503,7 +519,7 @@
 					<References Name="[Camp]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[Fk__App_Catalog__app_id]">
 			<Relationship Name="Columns">
@@ -526,7 +542,7 @@
 					<References Name="[Camp].[App_Catalog]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="11" />
+			<AttachedAnnotation Disambiguator="12" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK__User_AppSection__section_app_id]">
 			<Relationship Name="Columns">
@@ -549,7 +565,7 @@
 					<References Name="[Camp].[App_Section_Mapping]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK__User_AppSection__user_id]">
 			<Relationship Name="Columns">
@@ -572,7 +588,7 @@
 					<References Name="[Camp].[User]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_ACA_Role_App_Mapping_role_id]">
 			<Relationship Name="Columns">
@@ -595,7 +611,7 @@
 					<References Name="[Camp].[Role]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_ACA.User_department_id]">
 			<Relationship Name="Columns">
@@ -618,7 +634,7 @@
 					<References Name="[Camp].[Department]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_ACA.User_designation_id]">
 			<Relationship Name="Columns">
@@ -641,7 +657,7 @@
 					<References Name="[Camp].[Designation]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_ACA.User_manager_id_FK]">
 			<Relationship Name="Columns">
@@ -664,7 +680,7 @@
 					<References Name="[Camp].[User]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_ACA.User_Role_Mapping_role_id]">
 			<Relationship Name="Columns">
@@ -687,7 +703,7 @@
 					<References Name="[Camp].[Role]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_App_Section__section_id]">
 			<Relationship Name="Columns">
@@ -710,7 +726,30 @@
 					<References Name="[Camp].[Section]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="12" />
+			<AttachedAnnotation Disambiguator="13" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_Camp_App_Catalog_section_id_Section_section_id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[section_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Camp].[Section]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="11" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[Camp].[FK_Role_App_Mapping_app_id]">
 			<Relationship Name="Columns">
@@ -733,7 +772,7 @@
 					<References Name="[Camp].[App_Catalog]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[Camp].[InsertRoleSP]">
 			<Property Name="BodyScript">
@@ -1221,7 +1260,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="3" />
+						<AttachedAnnotation Disambiguator="5" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1237,7 +1276,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="5" />
+						<AttachedAnnotation Disambiguator="4" />
 					</Element>
 				</Entry>
 			</Relationship>
@@ -1246,7 +1285,7 @@ END]]></Value>
 					<References Name="[Camp]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="9" />
+			<AttachedAnnotation Disambiguator="8" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA_Role_App_Mapping_role_app_id]">
 			<Relationship Name="ColumnSpecifications">
@@ -1265,7 +1304,7 @@ END]]></Value>
 					<References Name="[Camp].[Role_App_Mapping]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA.App_Catalog_app_id]">
 			<Relationship Name="ColumnSpecifications">
@@ -1303,7 +1342,7 @@ END]]></Value>
 					<References Name="[Camp].[Department]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="13" />
+			<AttachedAnnotation Disambiguator="14" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA.Designation_designation_id]">
 			<Relationship Name="ColumnSpecifications">
@@ -1327,7 +1366,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="14" />
+			<AttachedAnnotation Disambiguator="15" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA.Role_role_id]">
 			<Relationship Name="ColumnSpecifications">
@@ -1346,7 +1385,7 @@ END]]></Value>
 					<References Name="[Camp].[Role]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA.User_Role_Mapping_user_role_id]">
 			<Relationship Name="ColumnSpecifications">
@@ -1365,7 +1404,7 @@ END]]></Value>
 					<References Name="[Camp].[User_Role_Mapping]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[Camp].[PK_ACA.User_user_id]">
 			<Relationship Name="ColumnSpecifications">
@@ -1384,7 +1423,7 @@ END]]></Value>
 					<References Name="[Camp].[User]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
 		</Element>
 		<Element Type="SqlTable" Name="[Camp].[Role]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1461,7 +1500,7 @@ END]]></Value>
 					<References Name="[Camp]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="24" />
+			<AttachedAnnotation Disambiguator="25" />
 		</Element>
 		<Element Type="SqlTable" Name="[Camp].[Role_App_Mapping]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1537,9 +1576,9 @@ END]]></Value>
 					<References Name="[Camp]" />
 				</Entry>
 			</Relationship>
+			<AttachedAnnotation Disambiguator="24" />
+			<AttachedAnnotation Disambiguator="18" />
 			<AttachedAnnotation Disambiguator="23" />
-			<AttachedAnnotation Disambiguator="17" />
-			<AttachedAnnotation Disambiguator="22" />
 		</Element>
 		<Element Type="SqlTable" Name="[Camp].[Section]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1786,10 +1825,10 @@ END]]></Value>
 					<References Name="[Camp]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="26" />
-			<AttachedAnnotation Disambiguator="18" />
+			<AttachedAnnotation Disambiguator="27" />
 			<AttachedAnnotation Disambiguator="19" />
 			<AttachedAnnotation Disambiguator="20" />
+			<AttachedAnnotation Disambiguator="21" />
 		</Element>
 		<Element Type="SqlTable" Name="[Camp].[User_AppSection_Mapping]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1871,6 +1910,21 @@ END]]></Value>
 						</Relationship>
 					</Element>
 				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Camp].[User_AppSection_Mapping].[app_id]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
 				<Entry>
@@ -1878,8 +1932,8 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<AttachedAnnotation Disambiguator="6" />
-			<AttachedAnnotation Disambiguator="15" />
 			<AttachedAnnotation Disambiguator="16" />
+			<AttachedAnnotation Disambiguator="17" />
 		</Element>
 		<Element Type="SqlTable" Name="[Camp].[User_Role_Mapping]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1955,94 +2009,68 @@ END]]></Value>
 					<References Name="[Camp]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="25" />
-			<AttachedAnnotation Disambiguator="21" />
+			<AttachedAnnotation Disambiguator="26" />
+			<AttachedAnnotation Disambiguator="22" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[Camp].[usp_addapps]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
-BEGIN
-	SET NOCOUNT ON;-- This helps prevent extra result sets from interfering with SELECT statements.
+BEGIN 
+	SET NOCOUNT ON;
 
-	DECLARE @current_date DATETIME = GETDATE();
+	DECLARE @current_date DATETIME = SWITCHOFFSET(GETDATE(), '+05:30');
 	DECLARE @app_id INT;
-	DECLARE @sectionID_Internal INT = NULL
+	DECLARE @is_default BIT;
 
-	SELECT @sectionID_Internal = [section_id]
-	FROM Camp.Section
-	WHERE [section_name] = 'Arus Internals'
+	SELECT @is_default = CASE WHEN @Section_id = 2 THEN 1 ELSE 0 END 
+	FROM Camp.App_Catalog
 
-	SET @sectionID_Internal = ISNULL(@sectionID_Internal, 0)
+	MERGE INTO Camp.App_Catalog AS t
+	USING (
+		SELECT @appname		AS [app_name],
+		@iconurl			AS icon_url,
+		@appurl				AS app_url,
+		@description		AS [description],
+		@is_default			AS is_default,
+		@current_date		AS last_updated_date,
+		1					AS is_active,
+		@Section_id			AS section_id ) AS s
 
-	-- Check if the app already exists
-	IF NOT EXISTS (
-			SELECT 1
-			FROM [Camp].[App_Catalog]
-			WHERE [app_name] = @appname
-			)
-	BEGIN
-		-- Insert new app into App_Catalog
-		INSERT INTO [Camp].[App_Catalog] (
-			[app_name]
-			,[icon_url]
-			,[app_url]
-			,[description]
-			,[is_default]
-			,[last_updated_date]
-			)
-		VALUES (
-			@appname
-			,@iconurl
-			,@appurl
-			,@description
-			,IIF(@sectionID_Internal = @Section_id, 1, 0)
-			,@current_date
-			);
+	ON t.[app_name] =s.[app_name] 
+	AND  t.app_url = s.app_url
+	
+	WHEN NOT MATCHED THEN
+	INSERT 
+		(
+			[app_name],
+			icon_url,
+			app_url,
+			[description],
+			is_default,
+			last_updated_date,
+			is_active,
+			section_id 
+		)
+	VALUES
+		(
+			s.[app_name],
+			s.icon_url,
+			s.app_url,
+			s.[description],
+			s.is_default,
+			s.last_updated_date,
+			s.is_active,
+			s.section_id 
+		)
+	WHEN MATCHED THEN
+	UPDATE SET
+			t.icon_url			= s.icon_url,
+			t.app_url			= s.app_url,
+			t.[description]		= s.[description],
+			t.is_default		= s.is_default,
+			t.last_updated_date = s.last_updated_date,
+			t.section_id		= s.section_id; 
 
-		SELECT @app_id = [app_id]
-		FROM [Camp].[App_Catalog]
-		WHERE [app_name] = @appname
-
-		-- Update existing mapping in App_Section_Mapping
-		MERGE INTO [Camp].[App_Section_Mapping] AS TARGET
-		USING (
-			SELECT @app_id AS [appid]
-				,@section_id AS [sectionid]
-				,1 AS [isactive]
-			) AS SOURCE
-			ON TARGET.[app_id] = SOURCE.[appid]
-		WHEN MATCHED
-			THEN
-				UPDATE
-				SET TARGET.[section_id] = SOURCE.[sectionid]
-					,TARGET.[last_updated_date] = @current_date
-		WHEN NOT MATCHED
-			THEN
-				INSERT (
-					[section_id]
-					,[app_id]
-					,[last_updated_date]
-					,[is_active]
-					)
-				VALUES (
-					SOURCE.[sectionid]
-					,SOURCE.[appid]
-					,@current_date
-					,SOURCE.[isactive]
-					);
-
-		SET @result = 1
-	END
-	ELSE
-	BEGIN
-		SET @result = - 1
-
-		RAISERROR (
-				'Appname already exists. Please enter new appname..!'
-				,16
-				,1
-				);
-	END
 END;]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2054,25 +2082,37 @@ END;]]></Value>
 					<References ExternalSource="BuiltIns" Name="[int]" />
 				</Entry>
 				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_name]" />
+					<References ExternalSource="BuiltIns" Name="[bit]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@Section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@appname]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@iconurl]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@appurl]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@description]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[App_Catalog].[app_name]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[usp_addapps].[@appname]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_url]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@appurl]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[App_Catalog].[app_name]" />
@@ -2093,50 +2133,36 @@ END;]]></Value>
 					<References Name="[Camp].[App_Catalog].[last_updated_date]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_addapps].[@iconurl]" />
+					<References Name="[Camp].[App_Catalog].[is_active]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_addapps].[@appurl]" />
+					<References Name="[Camp].[App_Catalog].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_addapps].[@iconurl]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[usp_addapps].[@description]" />
 				</Entry>
-				<Entry>
-					<References Name="[Camp].[usp_addapps].[@Section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Catalog].[app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
-				</Entry>
+				<Entry />
 				<Entry />
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
-				</Entry>
-				<Entry>
 					<References Name="[Camp].[usp_addapps].[@Section_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[last_updated_date]" />
+					<References Name="[Camp].[App_Catalog].[icon_url]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+					<References Name="[Camp].[App_Catalog].[description]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
+					<References Name="[Camp].[App_Catalog].[is_default]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[last_updated_date]" />
+					<References Name="[Camp].[App_Catalog].[last_updated_date]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[usp_addapps].[@result]" />
+					<References Name="[Camp].[App_Catalog].[section_id]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -2219,15 +2245,159 @@ END;]]></Value>
 						</Relationship>
 					</Element>
 				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_addapps].[@result]">
-						<Property Name="IsOutput" Value="True" />
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1377" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE Camp.usp_addapps&#xD;&#xA;&#x9; @appname VARCHAR(50) &#xD;&#xA;&#x9;,@iconurl NVARCHAR(MAX) &#xD;&#xA;&#x9;,@appurl NVARCHAR(MAX) &#xD;&#xA;&#x9;,@description NVARCHAR(MAX)&#xD;&#xA;&#x9;,@Section_id INT &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_AppActionLog]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON; 
+
+		DECLARE 
+				@comments VARCHAR(1000),
+				@app_name VARCHAR(100),
+				@name VARCHAR(100),
+				@action VARCHAR(30),
+				@date DATETIME = SWITCHOFFSET(GETDATE(), '+05:30');
+
+
+		SELECT @name = full_name 
+		FROM camp.[user]
+		WHERE [user_id] = @user_id;
+
+		SELECT @action = action_type 
+		FROM camp.app_action_type
+		WHERE action_type_id = @action_id;
+
+		SELECT @app_name = app_name 
+		FROM camp.app_catalog
+		WHERE app_id = @app_id;
+ 
+		SET @comments = CONCAT(@app_name, ' has been ', LOWER(@action), ' by ', @name);
+ 
+		INSERT INTO Camp.App_Action_Log
+					(
+						app_id, 
+						action_by, 
+						action_type_id, 
+						action_date, 
+						comments
+					)
+		VALUES
+					(
+						@app_id, 
+						@user_id,
+						@action_id, 
+						@date, 
+						@comments
+					);
+
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[full_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_AppActionLog].[@user_id]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[Camp].[usp_AppActionLog].[@action_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_AppActionLog].[@app_id]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_AppActionLog].[@app_id]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[smallint]" />
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_AppActionLog].[@user_id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_AppActionLog].[@action_id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -2242,10 +2412,10 @@ END;]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1977" />
+				<Property Name="Length" Value="943" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_addapps] (&#xD;&#xA;&#x9;@appname VARCHAR(50)&#xD;&#xA;&#x9;,@iconurl NVARCHAR(MAX)&#xD;&#xA;&#x9;,@appurl NVARCHAR(MAX)&#xD;&#xA;&#x9;,@description NVARCHAR(MAX)&#xD;&#xA;&#x9;,@Section_id INT&#xD;&#xA;&#x9;,@result SMALLINT OUTPUT&#xD;&#xA;&#x9;)&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE Camp.usp_AppActionLog&#xD;&#xA;&#x9;&#x9;@app_id INT,&#xD;&#xA;        @user_id INT ,&#xD;&#xA;        @action_id INT &#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[Camp].[usp_AppLoadProc]">
@@ -2253,106 +2423,54 @@ END;]]></Value>
 				<Value><![CDATA[
 BEGIN
 	SET NOCOUNT ON;
+		WITH Defaults AS (
+			SELECT 
+				ac.app_id,
+				ac.app_name,
+				ac.icon_url,
+				ac.app_url,
+				ac.description,
+				ac.is_default,
+				s.section_id,
+				s.section_name
+			FROM camp.App_Catalog AS ac
 
-	DECLARE @sectionID_Verify INT = NULL
+			JOIN camp.Section AS s 
+			ON s.section_id = ac.section_id
 
-	SELECT @sectionID_Verify = [section_id]
-	FROM Camp.Section
-	WHERE [section_name] = 'Arus Internals'
+			WHERE s.section_id = 2
+		),
+		UserApps AS (
+			SELECT 
+				ac.app_id,
+				ac.app_name,
+				ac.icon_url,
+				ac.app_url,
+				ac.description,
+				ac.is_default,
+				s.section_id,
+				s.section_name
+			FROM camp.App_Catalog AS ac
+			JOIN camp.Section AS s ON s.section_id = ac.section_id
+			JOIN camp.User_AppSection_Mapping AS am ON ac.app_id = am.app_id
+			WHERE am.is_active = 1 AND am.user_id = @user_id
+		)
+		SELECT * 
+		FROM Defaults AS d
+		WHERE @section_id = '' OR @section_id = 2
 
-	IF @sectionID = @sectionID_Verify
-	BEGIN
-		SELECT ROW_NUMBER() OVER (
-				ORDER BY ASM.[section_app_id] ASC
-				) AS [SectionAppId]
-			,S.section_id AS [SectionId]
-			,S.Section_name AS [SectionName]
-			,AC.app_id AS [ApplicationID]
-			,AC.[app_name] AS [ApplicationName]
-			,AC.icon_url AS [AppImage]
-			,AC.app_url AS [AppURL]
-			,AC.[description]
-			,AC.last_updated_date AS [AppUpdatedDate]
-		FROM Camp.App_Section_Mapping ASM
-		JOIN Camp.Section S ON ASM.Section_id = S.Section_id
-		JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
-		WHERE S.section_id = @sectionID
-			AND S.is_active = 1
-			AND ASM.is_active = 1
-			AND AC.is_active = 1
-	END
-	ELSE IF @sectionID = 1
-	BEGIN
-		SELECT ROW_NUMBER() OVER (
-				ORDER BY ASM.[section_app_id] ASC
-				) AS [SectionAppId]
-			,S.section_id AS [SectionId]
-			,S.Section_name AS [SectionName]
-			,AC.app_id AS [ApplicationID]
-			,AC.[app_name] AS [ApplicationName]
-			,AC.icon_url AS [AppImage]
-			,AC.app_url AS [AppURL]
-			,AC.[description]
-			,AC.last_updated_date AS [AppUpdatedDate]
-		FROM Camp.App_Section_Mapping ASM
-		JOIN Camp.Section S ON ASM.Section_id = S.Section_id
-		JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
-		WHERE S.section_id = @sectionID_Verify
-			AND S.is_active = 1
-			AND ASM.is_active = 1
-			AND AC.is_active = 1
-		
-		UNION ALL
-		
-		SELECT uasm.section_app_id AS [SectionAppId]
-			,S.section_id AS [SectionId]
-			,S.Section_name AS [SectionName]
-			,AC.app_id AS [ApplicationID]
-			,AC.[app_name] AS [ApplicationName]
-			,AC.icon_url AS [AppImage]
-			,AC.app_url AS [AppURL]
-			,AC.[description]
-			,AC.last_updated_date AS [AppUpdatedDate]
-		FROM Camp.[user] U
-		JOIN [Camp].[User_AppSection_Mapping] uasm ON uasm.[user_id] = u.[user_id]
-		JOIN Camp.App_Section_Mapping ASM ON ASM.section_app_id = uasm.section_app_id
-		JOIN Camp.Section S ON ASM.Section_id = S.Section_id
-		JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
-		WHERE u.[user_id] = @user_id
-			AND S.is_active = 1
-			AND ASM.is_active = 1
-			AND AC.is_active = 1
-			AND UASM.[is_active] = 1
-	END
-	ELSE
-	BEGIN
-		SELECT uasm.section_app_id AS [SectionAppId]
-			,S.section_id AS [SectionId]
-			,S.Section_name AS [SectionName]
-			,AC.app_id AS [ApplicationID]
-			,AC.[app_name] AS [ApplicationName]
-			,AC.icon_url AS [AppImage]
-			,AC.app_url AS [AppURL]
-			,AC.[description]
-			,AC.last_updated_date AS [AppUpdatedDate]
-		FROM Camp.[user] U
-		JOIN [Camp].[User_AppSection_Mapping] uasm ON uasm.[user_id] = u.[user_id]
-		JOIN Camp.App_Section_Mapping ASM ON ASM.section_app_id = uasm.section_app_id
-		JOIN Camp.Section S ON ASM.Section_id = S.Section_id
-		JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
-		WHERE u.[user_id] = @user_id
-			AND S.[section_id] = ISNULL(@sectionID, S.[section_id])
-			AND S.is_active = 1
-			AND ASM.is_active = 1
-			AND AC.is_active = 1
-			AND UASM.[is_active] = 1
-	END
-END]]></Value>
+		UNION
+
+		SELECT * 
+		FROM UserApps AS u
+		WHERE @section_id = '' 
+		OR u.section_id = @section_id;
+END;]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
+					<References Name="[Camp].[App_Catalog]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[Section]" />
@@ -2361,37 +2479,7 @@ END]]></Value>
 					<References Name="[Camp].[Section].[section_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[Section].[section_name]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[usp_AppLoadProc].[@sectionID]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Catalog]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Catalog].[app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_name]" />
+					<References Name="[Camp].[App_Catalog].[section_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[App_Catalog].[app_id]" />
@@ -2409,61 +2497,19 @@ END]]></Value>
 					<References Name="[Camp].[App_Catalog].[description]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Catalog].[last_updated_date]" />
+					<References Name="[Camp].[App_Catalog].[is_default]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Catalog].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User]" />
+					<References Name="[Camp].[Section].[section_name]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[User_AppSection_Mapping]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[user_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
 					<References Name="[Camp].[App_Catalog].[app_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_name]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Catalog].[app_id]" />
+					<References Name="[Camp].[User_AppSection_Mapping].[app_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[App_Catalog].[app_name]" />
@@ -2478,28 +2524,186 @@ END]]></Value>
 					<References Name="[Camp].[App_Catalog].[description]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Catalog].[last_updated_date]" />
+					<References Name="[Camp].[App_Catalog].[is_default]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[User].[user_id]" />
+					<References Name="[Camp].[Section].[section_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_AppLoadProc].[@user_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Catalog].[is_active]" />
+					<References Name="[Camp].[Section].[section_name]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[User_AppSection_Mapping].[is_active]" />
 				</Entry>
 				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_AppLoadProc].[@user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_AppLoadProc].[@section_id]" />
+				</Entry>
+				<Entry>
 					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[Camp].[usp_AppLoadProc].[CTE1].[Defaults]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[Defaults].[app_id]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[App_Catalog].[app_id]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[Defaults].[app_name]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[App_Catalog].[app_name]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[Defaults].[icon_url]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[App_Catalog].[icon_url]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[Defaults].[app_url]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[App_Catalog].[app_url]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[Defaults].[description]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[App_Catalog].[description]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[Defaults].[is_default]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[App_Catalog].[is_default]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[Defaults].[section_id]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[Section].[section_id]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[Defaults].[section_name]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[Section].[section_name]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[Camp].[usp_AppLoadProc].[CTE1].[UserApps]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[UserApps].[app_id]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[App_Catalog].[app_id]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[UserApps].[app_name]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[App_Catalog].[app_name]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[UserApps].[icon_url]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[App_Catalog].[icon_url]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[UserApps].[app_url]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[App_Catalog].[app_url]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[UserApps].[description]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[App_Catalog].[description]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[UserApps].[is_default]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[App_Catalog].[is_default]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[UserApps].[section_id]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[Section].[section_id]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_AppLoadProc].[CTE1].[UserApps].[section_name]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[Section].[section_name]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -2519,10 +2723,7 @@ END]]></Value>
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_AppLoadProc].[@sectionID]">
-						<Property Name="DefaultExpressionScript">
-							<Value><![CDATA[NULL]]></Value>
-						</Property>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_AppLoadProc].[@section_id]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -2543,10 +2744,10 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="3639" />
+				<Property Name="Length" Value="1013" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_AppLoadProc] (&#xD;&#xA;/*&#xD;&#xA;Author: Anushka Parasuraman&#xD;&#xA;Created Date: 23-Jul-2024&#xD;&#xA;About SP: Fetching User App details to App&#xD;&#xA;&#xD;&#xA;Sample Execution:&#xD;&#xA;&#xD;&#xA;EXEC [Camp].[usp_AppLoadProc] @user_id = 20, @sectionID = 2&#xD;&#xA;&#xD;&#xA;*/&#xD;&#xA;/* &#xD;&#xA;SP Change History Capture&#xD;&#xA;-------------------------------------------------------------------&#xD;&#xA;Date&#x9;&#x9;&#x9;ChangeBy&#x9;&#x9;Reason&#xD;&#xA;09-07-2024&#x9;&#x9;Anushka P&#x9;&#x9;Initial Write&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;-------------------------------------------------------------------&#xD;&#xA;*/&#xD;&#xA;&#x9;@user_id INT&#xD;&#xA;&#x9;,@sectionID INT = NULL&#xD;&#xA;&#x9;)&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_AppLoadProc]  &#xD;&#xA;@user_id INT ,&#xD;&#xA;@section_id INT &#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[Camp].[usp_GetAndMarkUserNotifications]">
@@ -2566,10 +2767,6 @@ BEGIN
     ORDER BY 
         created_at DESC;
 
-    -- Mark the notifications as read
-    --UPDATE Notifications
-    --SET is_read = 0
-    --WHERE user_id = @UserID;
 END;]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2619,7 +2816,7 @@ END;]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="473" />
+				<Property Name="Length" Value="351" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_GetAndMarkUserNotifications]&#xD;&#xA;    @UserID INT&#xD;&#xA;AS" />
@@ -2629,33 +2826,31 @@ END;]]></Value>
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 BEGIN
-	--DECLARE @User_Id INT = 37;
-	--DECLARE @isdelete bit =0;
-	SELECT ASM.section_app_id
-		,U.[user_id]
-		,AC.[app_id]
-		,AC.[app_name]
-		,AC.icon_url
-		,AC.[description]
-		,@isdelete as isdelete
-		,  CASE 
-        WHEN UAM.user_appsection_id IS NULL AND AC.is_default = 0 THEN 1
-        ELSE 0
-    END AS [is_active]
-		--,IIF((UAM.user_appsection_id IS NULL, 1, 0) OR (AC.is_default = 1,0,1)) AS [is_active]
-		
-	--, UAM.*
-	FROM [camp].[App_Catalog] AC WITH (NOLOCK)
-	JOIN (
-		SELECT *
-		FROM [camp].[User] WITH (NOLOCK)
-		WHERE [user_id] = @User_Id
-		) U ON 1 = 1
-	INNER JOIN [camp].[App_Section_Mapping] ASM ON ASM.[app_id] = AC.[app_id]
-	LEFT JOIN [Camp].[User_AppSection_Mapping] UAM ON UAM.[section_app_id] = ASM.[section_app_id]
-		AND UAM.[user_id] = U.[user_id]
-		Where ASM.[is_active] = 1;
-		
+	SET NOCOUNT ON;
+		SELECT 
+			ac.app_id,
+			ac.app_name,
+			ac.icon_url,
+			ac.app_url,
+			ac.description,
+			ac.is_default,
+			s.section_name,
+			CASE 
+			 WHEN ac.section_id = 2 OR am.is_active = 1 AND am.user_id = @user_id THEN 1
+			 ELSE 0
+			END AS IsAdded
+		FROM camp.App_Catalog AS ac
+
+		JOIN camp.Section AS s
+		ON s.section_id = ac.section_id
+
+		LEFT JOIN camp.User_AppSection_Mapping AS am
+		ON ac.app_id = am.app_id 
+		AND am.user_id = @user_id
+
+		WHERE ac.is_active = 1 
+
+		ORDER BY IsAdded,s.section_name;
 END;]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2664,40 +2859,28 @@ END;]]></Value>
 					<References Name="[Camp].[App_Catalog]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[User]" />
+					<References Name="[Camp].[Section]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[User].[user_id]" />
+					<References Name="[Camp].[Section].[section_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_getappcatalog].[@User_Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Catalog].[app_id]" />
+					<References Name="[Camp].[App_Catalog].[section_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[User_AppSection_Mapping]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
+					<References Name="[Camp].[App_Catalog].[app_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
+					<References Name="[Camp].[User_AppSection_Mapping].[app_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[User].[user_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Catalog].[app_id]" />
+					<References Name="[Camp].[usp_getappcatalog].[@user_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[App_Catalog].[app_name]" />
@@ -2706,48 +2889,36 @@ END;]]></Value>
 					<References Name="[Camp].[App_Catalog].[icon_url]" />
 				</Entry>
 				<Entry>
+					<References Name="[Camp].[App_Catalog].[app_url]" />
+				</Entry>
+				<Entry>
 					<References Name="[Camp].[App_Catalog].[description]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[usp_getappcatalog].[@isdelete]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[user_appsection_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[App_Catalog].[is_default]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[is_active]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_getappcatalog].[@User_Id]">
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_getappcatalog].[@user_id]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_getappcatalog].[@isdelete]">
-						<Property Name="DefaultExpressionScript">
-							<Value><![CDATA[0]]></Value>
-						</Property>
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[bit]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -2762,10 +2933,10 @@ END;]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="917" />
+				<Property Name="Length" Value="618" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_getappcatalog] (@User_Id INT,@isdelete bit =0)&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_getappcatalog] @user_id INT &#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[Camp].[usp_GetSectionlistFordropdown]">
@@ -2776,7 +2947,6 @@ BEGIN
 
 	SELECT [section_id]
 				,[section_name]
-				--,[is_active]
 			FROM [Camp].[Section]
 			where is_active =1
 END;]]></Value>
@@ -2802,7 +2972,7 @@ END;]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="212" />
+				<Property Name="Length" Value="192" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_GetSectionlistFordropdown]&#xD;&#xA;   &#xD;&#xA;AS" />
@@ -2814,72 +2984,83 @@ END;]]></Value>
 BEGIN
 	SET NOCOUNT ON;
 
-	SELECT DISTINCT @user_id [user_id]
-		,s.section_id
-		,s.section_name
-	FROM Camp.App_Section_Mapping ASM
-	JOIN Camp.Section S ON ASM.Section_id = S.Section_id
-	JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
-	WHERE ASM.is_active = 1
-		AND AC.is_active = 1
-		AND S.section_id IN (
-			SELECT [section_id]
-			FROM Camp.Section
-			WHERE [section_name] IN (
-					'Arus Internals'
-					,'All Apps'
-					)
-				AND [is_active] = 1
-			)
-	
-	UNION
-	
-	SELECT DISTINCT U.[user_id]
-		,s.section_id
-		,s.section_name
-	FROM Camp.[user] U
-	JOIN [Camp].[User_AppSection_Mapping] uasm ON uasm.[user_id] = u.[user_id]
-	JOIN Camp.App_Section_Mapping ASM ON ASM.section_app_id = uasm.section_app_id
-	JOIN Camp.Section S ON ASM.Section_id = S.Section_id
-	JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
-	WHERE u.[user_id] = @user_id
-		AND S.is_active = 1
-		AND ASM.is_active = 1
-		AND AC.is_active = 1
-		AND UASM.[is_active] = 1
+		WITH Defaults AS (
+			SELECT 
+				s.section_id,
+				s.section_name
+			FROM Camp.Section AS s 
+			WHERE s.section_id IN (1, 2)
+		),
+		UserApps AS (
+			SELECT DISTINCT
+				s.section_id,
+				s.section_name
+			FROM camp.App_Catalog AS ac
 
-	UNION 
-	 
-	 SELECT DISTINCT @user_id [user_id]
-			, Section_id 
-			,Section_name
-			FROM Camp.Section 
-		    WHERE Section_id = 1
+			JOIN camp.Section AS s 
+			ON s.section_id = ac.section_id
 
+			JOIN camp.User_AppSection_Mapping AS am
+			ON ac.app_id = am.app_id
+
+			WHERE am.is_active = 1 
+			  AND s.is_active = 1
+			  AND am.user_id = @user_id
+		)
+		SELECT section_id, section_name
+		FROM Defaults
+
+		UNION
+
+		SELECT section_id, section_name
+		FROM UserApps AS u
+
+		ORDER BY section_name
 END;]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping]" />
-				</Entry>
-				<Entry>
 					<References Name="[Camp].[Section]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[Section].[section_id]" />
 				</Entry>
 				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
 					<References Name="[Camp].[App_Catalog]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[App_Catalog].[app_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
+					<References Name="[Camp].[User_AppSection_Mapping].[app_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[is_active]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[usp_GetSectionsForMenuBar].[@user_id]" />
@@ -2891,82 +3072,60 @@ END;]]></Value>
 					<References Name="[Camp].[Section].[section_name]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Catalog].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
 					<References Name="[Camp].[Section].[section_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[Section].[section_name]" />
 				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
 				<Entry>
-					<References Name="[Camp].[Section].[is_active]" />
+					<Element Type="SqlDynamicColumnSource" Name="[Camp].[usp_GetSectionsForMenuBar].[CTE1].[Defaults]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_GetSectionsForMenuBar].[CTE1].[Defaults].[section_id]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[Section].[section_id]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_GetSectionsForMenuBar].[CTE1].[Defaults].[section_name]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[Section].[section_name]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[User]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[user_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Catalog].[app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[user_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_name]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[user_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Catalog].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_name]" />
+					<Element Type="SqlDynamicColumnSource" Name="[Camp].[usp_GetSectionsForMenuBar].[CTE1].[UserApps]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_GetSectionsForMenuBar].[CTE1].[UserApps].[section_id]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[Section].[section_id]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[Camp].[usp_GetSectionsForMenuBar].[CTE1].[UserApps].[section_name]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Camp].[Section].[section_name]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -2992,10 +3151,145 @@ END;]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1188" />
+				<Property Name="Length" Value="732" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_GetSectionsForMenuBar] @user_id INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_GetUserDetails]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN 
+	SET NOCOUNT ON;
+
+		SELECT 
+			 u.[user_id]	  AS [UserID]
+			,u.emp_id		    AS [EmployeeID]
+			,u.full_name	  AS [EmployeeName]
+			,u.email		    AS [Email]
+			,d.[name]		    AS [DepartmentName]
+			,ds.[title]		  AS [Designation]
+			,m.emp_id		    AS [ManagerID]
+			,m.email		    AS [ManagerEmail]
+			,m.[full_name]	AS [ManagerName]
+		FROM Camp.[User] AS u
+
+		JOIN Camp.User_Role_Mapping AS ur
+		ON u.[user_id] = ur.[user_id]
+
+		JOIN Camp.[User] AS m
+		ON u.manager_id = m.[user_id]
+
+		JOIN Camp.Department  AS d
+		ON u.department_id = D.department_id
+
+		JOIN Camp.Designation AS ds
+		ON u.designation_id = ds.designation_id
+
+		WHERE u.email = @email;
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[Camp].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_Role_Mapping]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User_Role_Mapping].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[manager_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Department]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[department_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Department].[department_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Designation]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[designation_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Designation].[designation_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[user_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[emp_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[full_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[email]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Department].[name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Designation].[title]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[emp_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[email]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[full_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[User].[email]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_GetUserDetails].[@email]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_GetUserDetails].[@email]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="759" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_GetUserDetails] @email VARCHAR(50)&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[Camp].[usp_GetUserNotifications]">
@@ -3009,7 +3303,7 @@ BEGIN
         is_read BIT,
         created_at DATETIME
     );
-
+    
     -- Select the most recent notification for the specified user
     INSERT INTO @RecentNotification
     SELECT TOP 1 
@@ -3147,7 +3441,7 @@ END;]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="830" />
+				<Property Name="Length" Value="834" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_GetUserNotifications]&#xD;&#xA;    @UserID INT&#xD;&#xA;AS" />
@@ -3156,92 +3450,25 @@ END;]]></Value>
 		<Element Type="SqlProcedure" Name="[Camp].[usp_LoginCheck]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
-BEGIN
-	DECLARE @Userid INT;
-	
-	-- Retrieve the user_id based on the provided email
-	SELECT @Userid = [user_id]
-	FROM [camp].[User]
-	WHERE email = @Email;
-
-	IF @Userid IS NOT NULL
-	BEGIN
-		-- User details with department, designation, and admin role
-		SELECT U.[user_id] AS [UserID]
-			,U.emp_id AS [EmployeeID]
-			,U.full_name AS [EmployeeName]
-			,U.email AS [Email]
-			,M.email AS [ManagerEmail]
-			,M.emp_id AS [ManagerID]
-			,M.[full_name] AS [ManagerName]
-			,DP.[name] AS [DepartmentName]
-			,DG.[title] AS [Designation]
-			,IIF(R.[role_name] IS NOT NULL, 1, 0) AS [IsAdmin]
-		FROM camp.[User] U WITH (NOLOCK)
-		INNER JOIN Camp.[Department] DP WITH (NOLOCK) ON DP.[department_id] = U.[department_id]
-		INNER JOIN Camp.[Designation] DG WITH (NOLOCK) ON DG.[designation_id] = U.[designation_id]
-		LEFT JOIN Camp.[User] M WITH (NOLOCK) ON U.[manager_id] = M.[user_id]
-		LEFT JOIN Camp.[User_Role_Mapping] URM WITH (NOLOCK) ON U.[user_id] = URM.[user_id]
-		LEFT JOIN Camp.[Role] R WITH (NOLOCK) ON R.[role_id] = URM.[role_id]
-			AND R.[role_name] = 'Admin'
-		WHERE U.[user_id] = @Userid;
-
-		SET @result = 1;
-			 --Section details with Status
-			SELECT [section_id]
-				,[section_name]
-				,[is_active]
-			FROM [Camp].[Section]
-	END
-	ELSE
-	BEGIN
-		SET @result = - 1;
-	END
-
-	-- Output the result
-	SELECT @result AS result;
-END]]></Value>
+BEGIN 
+	SET NOCOUNT ON;
+ 
+		SELECT r.role_name AS [UserRole]
+		FROM Camp.[User] AS u
+ 
+		JOIN Camp.User_Role_Mapping AS ur
+		ON u.[user_id] = ur.[user_id]
+ 
+		JOIN Camp.[Role] AS r
+		ON r.role_id = ur.role_id
+ 
+		WHERE u.email = @email;
+END;]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
 					<References Name="[Camp].[User]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[user_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[email]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[usp_LoginCheck].[@Email]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Department]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Department].[department_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[department_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Designation]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Designation].[designation_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[designation_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[manager_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[user_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[User_Role_Mapping]" />
@@ -3265,54 +3492,15 @@ END]]></Value>
 					<References Name="[Camp].[Role].[role_name]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[User].[user_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[emp_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[full_name]" />
-				</Entry>
-				<Entry>
 					<References Name="[Camp].[User].[email]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[User].[email]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[emp_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[full_name]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Department].[name]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Designation].[title]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User].[user_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[usp_LoginCheck].[@result]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_name]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[is_active]" />
+					<References Name="[Camp].[usp_LoginCheck].[@email]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_LoginCheck].[@Email]">
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_LoginCheck].[@email]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -3327,22 +3515,6 @@ END]]></Value>
 						</Relationship>
 					</Element>
 				</Entry>
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_LoginCheck].[@result]">
-						<Property Name="IsOutput" Value="True" />
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[smallint]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
 				<Entry>
@@ -3350,211 +3522,58 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1985" />
+				<Property Name="Length" Value="319" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_LoginCheck]&#xD;&#xA;/*&#xD;&#xA;Author: Anushka Parasuraman&#xD;&#xA;Created Date: 08-Jul-2024&#xD;&#xA;About SP: Fetching User &amp; Section details to Login Page&#xD;&#xA;&#xD;&#xA;Sample Execution:&#xD;&#xA;&#xD;&#xA;DECLARE @Email VARCHAR(50) = 'anushka.p@arus.co.in';&#xD;&#xA;DECLARE @result SMALLINT;&#xD;&#xA;&#xD;&#xA;EXEC [Camp].[usp_LoginCheck] @Email, @result OUTPUT;&#xD;&#xA;&#xD;&#xA;*/&#xD;&#xA;/* &#xD;&#xA;SP Change History Capture&#xD;&#xA;-------------------------------------------------------------------&#xD;&#xA;Date&#x9;&#x9;&#x9;ChangeBy&#x9;&#x9;Reason&#xD;&#xA;09-07-2024&#x9;&#x9;Anushka P&#x9;&#x9;Initial Write&#xD;&#xA;&#xD;&#xA;-------------------------------------------------------------------&#xD;&#xA;*/&#xD;&#xA;   @Email VARCHAR(50)&#xD;&#xA;&#x9;,@result SMALLINT OUT&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_LoginCheck] @email VARCHAR(50)&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[Camp].[usp_MoveToSection]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 BEGIN
-    DECLARE @newsectionid INT;
-    DECLARE @appid INT;
-    DECLARE @currentsectionid INT;
-    DECLARE @section_app_id INT;
-    DECLARE @new_section_app_id INT;
+	SET NOCOUNT ON;
+	DECLARE @date DATETIME = SWITCHOFFSET(GETDATE(), '+05:30');
 
-    -- Get the section_id of the new section
-    SELECT @newsectionid = section_id
-    FROM [Camp].[Section]
-    WHERE section_name = @sectionname;
-
-    -- Retrieve app_id if app exists
-    IF EXISTS (SELECT 1 FROM [Camp].[App_Catalog] WHERE [app_name] = @appname)
-    BEGIN
-        SELECT @appid = [app_id]
-        FROM [Camp].[App_Catalog]
-        WHERE [app_name] = @appname;
-    END
-
-    -- Get the current section_id for the given app
-    SELECT @currentsectionid = section_id
-    FROM [Camp].[App_Section_Mapping]
-    WHERE app_id = @appid AND is_active = 1;
-
-    -- Deactivate the current mapping if it exists
-    IF @currentsectionid IS NOT NULL
-    BEGIN
-        UPDATE [Camp].[App_Section_Mapping]
-        SET is_active = 0
-        WHERE section_id = @currentsectionid AND app_id = @appid;
-    END
-
-    -- Check if the new section_id and app_id combination exists in App_Section_Mapping
-    SELECT @section_app_id = section_app_id
-    FROM [Camp].[App_Section_Mapping]
-    WHERE section_id = @newsectionid AND app_id = @appid;
-
-    -- If the combination does not exist, create a new mapping
-    IF @section_app_id IS NULL
-    BEGIN
-        INSERT INTO [Camp].[App_Section_Mapping] (section_id, app_id, last_updated_date, is_active)
-        VALUES (@newsectionid, @appid, GETDATE(), 1); -- Assuming 1 means active
-
-        -- Retrieve the newly created section_app_id
-        SELECT @new_section_app_id = section_app_id
-        FROM [Camp].[App_Section_Mapping]
-        WHERE section_id = @newsectionid AND app_id = @appid AND is_active = 1;
-    END
-    ELSE
-    BEGIN
-        -- Update the existing mapping to active
-        UPDATE [Camp].[App_Section_Mapping]
-        SET is_active = 1, last_updated_date = GETDATE()
-        WHERE section_app_id = @section_app_id;
-
-        -- Set @new_section_app_id to the existing section_app_id
-        SET @new_section_app_id = @section_app_id;
-    END
-
-    -- If the new section is inactive, make it active
-    IF EXISTS (SELECT 1 FROM [Camp].[Section] WHERE section_id = @newsectionid AND is_active = 0)
-    BEGIN
-        UPDATE [Camp].[Section]
-        SET is_active = 1
-        WHERE section_id = @newsectionid;
-    END
-
-    -- Update User_AppSection_Mapping to reflect the new section_app_id
-    UPDATE [Camp].[User_AppSection_Mapping]
-    SET section_app_id = @new_section_app_id, last_updated_date = GETDATE()
-    WHERE section_app_id IN (
-        SELECT section_app_id
-        FROM [Camp].[App_Section_Mapping]
-        WHERE app_id = @appid AND section_id = @currentsectionid
-    );
-
-    -- If the current section becomes inactive due to no active app, make it inactive
-    IF NOT EXISTS (
-        SELECT 1
-        FROM [Camp].[App_Section_Mapping]
-        WHERE section_id = @currentsectionid AND is_active = 1
-    )
-    BEGIN
-        UPDATE [Camp].[Section]
-        SET is_active = 0
-        WHERE section_id = @currentsectionid;
-    END
+		UPDATE Camp.App_Catalog
+		SET section_id = @section_id,
+			last_updated_date = @date
+		WHERE app_id = @app_id
 END;]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_name]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[usp_MoveToSection].[@sectionname]" />
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[App_Catalog]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Catalog].[app_name]" />
+					<References Name="[Camp].[App_Catalog].[section_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_MoveToSection].[@appname]" />
+					<References Name="[Camp].[usp_MoveToSection].[@section_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[App_Catalog].[last_updated_date]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[App_Catalog].[app_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[App_Catalog].[app_name]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[last_updated_date]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[Section].[is_active]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[last_updated_date]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[is_active]" />
+					<References Name="[Camp].[usp_MoveToSection].[@app_id]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_MoveToSection].[@sectionname]">
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_MoveToSection].[@section_id]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="50" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[varchar]" />
+											<References ExternalSource="BuiltIns" Name="[int]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -3563,11 +3582,122 @@ END;]]></Value>
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_MoveToSection].[@appname]">
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_MoveToSection].[@app_id]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Camp]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="287" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_MoveToSection] @section_id INT,@app_id INT &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Camp].[usp_ReportUserLogin]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    SET NOCOUNT ON;
+    
+		DECLARE @date DATETIME = SWITCHOFFSET(GETDATE(), '+05:30');
+
+		UPDATE Camp.User_Login
+		SET is_reported = 1
+		WHERE login_id = @login_id;
+
+		INSERT INTO Camp.Reported_login 
+			(
+				login_id, 
+				reported_by, 
+				reported_reason, 
+				reported_date
+			)
+		VALUES 
+			(
+				@login_id,
+				@reported_by, 
+				@reported_reason,
+				@date
+			);
+    
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[Camp].[usp_ReportUserLogin].[@login_id]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[Camp].[usp_ReportUserLogin].[@reported_by]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_ReportUserLogin].[@reported_reason]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_ReportUserLogin].[@login_id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_ReportUserLogin].[@reported_by]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_ReportUserLogin].[@reported_reason]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="2000" />
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[varchar]" />
@@ -3585,10 +3715,10 @@ END;]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="3262" />
+				<Property Name="Length" Value="536" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_MoveToSection]&#xD;&#xA;    @sectionname VARCHAR(50),&#xD;&#xA;    @appname VARCHAR(50)&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE Camp.usp_ReportUserLogin&#xD;&#xA;    @login_id INT,&#xD;&#xA;    @reported_by INT,&#xD;&#xA;    @reported_reason VARCHAR(2000)&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[Camp].[usp_SaveManageSections]">
@@ -3596,69 +3726,54 @@ END;]]></Value>
 				<Value><![CDATA[
 BEGIN
 	SET NOCOUNT ON;
+		DECLARE
+				@date DATETIME = SWITCHOFFSET(GETDATE(), '+05:30'),
+				@sectionid INT;
 
-	DECLARE @current_date DATETIME = GETDATE();
+		SELECT @sectionid = section_id 
+		FROM Camp.Section
+		WHERE section_name = @section_name;
 
-	-- Perform the action based on the input parameter @IsDelete
-	IF @IsDelete = 0
-	BEGIN
-		
-		IF EXISTS (
-				SELECT 1
-				FROM [Camp].[Section]
-				WHERE section_name = @sectionname
-					AND is_active = 0
-				)
+		-- Handle INSERT/UPDATE or DEACTIVATE based on @is_deleted flag
+		IF @is_deleted = 0
 		BEGIN
-			UPDATE [Camp].[Section]
-			SET is_active = 1 
-				,last_updated_date = @current_date
-			WHERE section_name = @sectionname;
-
-			SET @Result = 2
+			MERGE INTO Camp.Section AS t
+			USING (
+				SELECT 
+					@section_name	AS section_name,
+					1				AS is_active,
+					@date			AS last_updated_date
+			) AS s
+			ON t.section_name = s.section_name
+			WHEN MATCHED THEN 
+				UPDATE 
+				SET t.is_active			= s.is_active,
+					t.last_updated_date = s.last_updated_date
+			WHEN NOT MATCHED THEN 
+				INSERT	(
+							section_name, 
+							is_active, 
+							last_updated_date
+						)
+				VALUES	(
+							s.section_name,
+							s.is_active, 
+							s.last_updated_date
+						);
 		END
-		ELSE IF NOT EXISTS (
-				SELECT 1
-				FROM [Camp].[Section]
-				WHERE section_name = @sectionname
-				)
-		BEGIN
-			INSERT INTO [Camp].[Section] (
-				section_name
-				,is_active
-				,last_updated_date
-				)
-			VALUES (
-				@sectionname
-				,1
-				,@current_date
-				);
+		ELSE IF @is_deleted = 1
+		BEGIN 
+			UPDATE Camp.Section
+			SET is_active = 0,
+				last_updated_date = @date
+			WHERE section_id = @sectionid;
 
-			SET @Result = 1
-		END
-	END
-	ELSE IF @IsDelete = 1
-	BEGIN
-		-- Set is_active to 0 for the section in Camp.Section
-		UPDATE [Camp].[Section]
-		SET is_active = 0
-			,last_updated_date = @current_date
-		WHERE section_id = @sectionid;
-
-		-- Delete the section mapping
-	DELETE FROM [Camp].[User_AppSection_Mapping]
-WHERE section_app_id IN (
-    SELECT [section_app_id]
-    FROM [Camp].[App_Section_Mapping]
-    WHERE section_id =@sectionid
-);
-
-		SET @Result = 3
-	END
-	ELSE
-	BEGIN
-		SET @Result = - 1
-	END;
+			-- Reassign apps from the deleted section to a Others section
+			UPDATE Camp.App_Catalog
+			SET section_id = 3, -- section_id 3 is the 'Others' section
+				last_updated_date = @date
+			WHERE section_id = @sectionid;
+		END;
 END;]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -3667,19 +3782,28 @@ END;]]></Value>
 					<References ExternalSource="BuiltIns" Name="[datetime]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_SaveManageSections].[@IsDelete]" />
+					<References ExternalSource="BuiltIns" Name="[int]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[Section]" />
 				</Entry>
 				<Entry>
+					<References Name="[Camp].[Section].[section_id]" />
+				</Entry>
+				<Entry>
 					<References Name="[Camp].[Section].[section_name]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_SaveManageSections].[@sectionname]" />
+					<References Name="[Camp].[usp_SaveManageSections].[@section_name]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[Section].[is_active]" />
+					<References Name="[Camp].[usp_SaveManageSections].[@is_deleted]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[Section].[section_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[Camp].[usp_SaveManageSections].[@section_name]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[Section].[is_active]" />
@@ -3687,43 +3811,33 @@ END;]]></Value>
 				<Entry>
 					<References Name="[Camp].[Section].[last_updated_date]" />
 				</Entry>
+				<Entry />
 				<Entry>
-					<References Name="[Camp].[Section].[section_name]" />
+					<References Name="[Camp].[Section].[is_active]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_SaveManageSections].[@Result]" />
+					<References Name="[Camp].[Section].[last_updated_date]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[Section].[section_id]" />
+					<References Name="[Camp].[App_Catalog]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_SaveManageSections].[@sectionid]" />
+					<References Name="[Camp].[App_Catalog].[section_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_app_id]" />
-				</Entry>
-				<Entry>
-					<References Name="[Camp].[App_Section_Mapping].[section_id]" />
+					<References Name="[Camp].[App_Catalog].[last_updated_date]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveManageSections].[@userid]">
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveManageSections].[@section_name]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -3732,66 +3846,13 @@ END;]]></Value>
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveManageSections].[@sectionname]">
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="100" />
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[varchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveManageSections].[@sectionid]">
-						<Property Name="DefaultExpressionScript">
-							<Value><![CDATA[NULL]]></Value>
-						</Property>
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveManageSections].[@IsDelete]">
-						<Property Name="DefaultExpressionScript">
-							<Value><![CDATA[0]]></Value>
-						</Property>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveManageSections].[@is_deleted]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[bit]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveManageSections].[@Result]">
-						<Property Name="IsOutput" Value="True" />
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[smallint]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -3806,64 +3867,63 @@ END;]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1550" />
+				<Property Name="Length" Value="1347" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_SaveManageSections] (&#xD;&#xA;&#x9; @userid INT&#xD;&#xA;&#x9;,@sectionname VARCHAR(100)&#xD;&#xA;&#x9;,@sectionid INT = NULL /*Sectionid applicable for UPDATE/DELETE action*/&#xD;&#xA;&#x9;,@IsDelete BIT = 0 /*Action (0-Delete, 1-Insert/Update)*/&#xD;&#xA;&#x9;,@Result SMALLINT OUTPUT&#xD;&#xA;&#x9;)&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_SaveManageSections] @section_name NVARCHAR(50),@is_deleted BIT&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[Camp].[usp_SaveUserAppSection]">
 			<Property Name="BodyScript">
-				<Value><![CDATA[
+				<Value><![CDATA[ 
 BEGIN
+	DECLARE @date DATETIME = SWITCHOFFSET(GETDATE(), '+05:30');
+
 	SET NOCOUNT ON;
-	DECLARE @current_date DATETIME = GETDATE();
+		IF @is_listed = 1
+		BEGIN
+			-- Add or update application in the user's list
+			MERGE INTO Camp.User_AppSection_Mapping AS t
+			USING (
+				SELECT 
+					@user_id	AS user_id,
+					@app_id		AS app_id,
+					1			AS is_active,
+					@date		AS last_updated_date
+			) AS s
+			ON t.user_id = s.user_id 
+			AND t.app_id = s.app_id
 
-	IF @IsDelete = 0
-	BEGIN
-		-- Insert or update the User_AppSection table for the specific user
-		MERGE INTO [Camp].[User_AppSection_Mapping] AS target
-		USING (
-			SELECT @userid AS [User_Id],
-				   @section_app_id AS section_app_id
-		) AS source
-		ON (
-			target.[User_Id] = source.[User_Id]
-			AND target.section_app_id = source.section_app_id
-		)
-		WHEN NOT MATCHED THEN
-			INSERT (
-				[User_Id],
-				section_app_id,
-				is_active,
-				last_updated_date
-			)
-			VALUES (
-				source.[User_Id],
-				source.section_app_id,
-				1,
-				GETDATE()
-			)
-		WHEN MATCHED AND target.is_active = 0 THEN
-			UPDATE
-			SET target.is_active = 1,
-				target.last_updated_date = GETDATE();
-	END;
-	ELSE IF @IsDelete = 1
-	BEGIN
-		-- Set is_active to 0 for the specific user and section
-		UPDATE [Camp].[User_AppSection_Mapping]
-		SET is_active = 0,
-			last_updated_date = @current_date
-		WHERE [User_Id] = @userid
-			AND section_app_id = @section_app_id;
-
-		-- Optionally, delete the specific user-section mapping if needed
-		 DELETE FROM [Camp].[User_AppSection_Mapping]
-		 WHERE [User_Id] = @userid
-		 	AND section_app_id = @section_app_id;
-
-	END;
+			WHEN NOT MATCHED THEN 
+				INSERT 
+					(
+						user_id, 
+						app_id, 
+						is_active, 
+						last_updated_date
+					)
+				VALUES 
+					(
+						s.user_id,
+						s.app_id, 
+						s.is_active,
+						s.last_updated_date
+					)
+			WHEN MATCHED THEN 
+				UPDATE SET
+					t.is_active			= s.is_active,
+					t.last_updated_date = s.last_updated_date;
+		END
+		ELSE IF @is_listed = 0
+		BEGIN
+			-- Remove application from the user's list
+			UPDATE Camp.User_AppSection_Mapping
+			SET
+				is_active			= 0,
+				last_updated_date	= @date
+			WHERE user_id = @user_id
+			AND app_id = @app_id;
+		END;
 END;]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -3872,13 +3932,13 @@ END;]]></Value>
 					<References ExternalSource="BuiltIns" Name="[datetime]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_SaveUserAppSection].[@IsDelete]" />
+					<References Name="[Camp].[usp_SaveUserAppSection].[@is_listed]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_SaveUserAppSection].[@userid]" />
+					<References Name="[Camp].[usp_SaveUserAppSection].[@user_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_SaveUserAppSection].[@section_app_id]" />
+					<References Name="[Camp].[usp_SaveUserAppSection].[@app_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[User_AppSection_Mapping]" />
@@ -3887,19 +3947,19 @@ END;]]></Value>
 					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_SaveUserAppSection].[@userid]" />
+					<References Name="[Camp].[usp_SaveUserAppSection].[@user_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
+					<References Name="[Camp].[User_AppSection_Mapping].[app_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[usp_SaveUserAppSection].[@section_app_id]" />
+					<References Name="[Camp].[usp_SaveUserAppSection].[@app_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[User_AppSection_Mapping].[user_id]" />
 				</Entry>
 				<Entry>
-					<References Name="[Camp].[User_AppSection_Mapping].[section_app_id]" />
+					<References Name="[Camp].[User_AppSection_Mapping].[app_id]" />
 				</Entry>
 				<Entry>
 					<References Name="[Camp].[User_AppSection_Mapping].[is_active]" />
@@ -3907,6 +3967,7 @@ END;]]></Value>
 				<Entry>
 					<References Name="[Camp].[User_AppSection_Mapping].[last_updated_date]" />
 				</Entry>
+				<Entry />
 				<Entry>
 					<References Name="[Camp].[User_AppSection_Mapping].[is_active]" />
 				</Entry>
@@ -3916,7 +3977,7 @@ END;]]></Value>
 			</Relationship>
 			<Relationship Name="Parameters">
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveUserAppSection].[@userid]">
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveUserAppSection].[@user_id]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -3931,7 +3992,7 @@ END;]]></Value>
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveUserAppSection].[@section_app_id]">
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveUserAppSection].[@app_id]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -3946,10 +4007,7 @@ END;]]></Value>
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveUserAppSection].[@IsDelete]">
-						<Property Name="DefaultExpressionScript">
-							<Value><![CDATA[0]]></Value>
-						</Property>
+					<Element Type="SqlSubroutineParameter" Name="[Camp].[usp_SaveUserAppSection].[@is_listed]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -3970,10 +4028,10 @@ END;]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1374" />
+				<Property Name="Length" Value="1153" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_SaveUserAppSection] (&#xD;&#xA;&#x9;@userid INT,&#xD;&#xA;&#x9;@section_app_id INT,&#xD;&#xA;&#x9;@IsDelete BIT = 0&#xD;&#xA;)&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [Camp].[usp_SaveUserAppSection]&#xD;&#xA;@user_id INT,&#xD;&#xA;@app_id INT ,&#xD;&#xA;@is_listed BIT&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[Camp].[usp_UpdateNotificationsToUnread]">

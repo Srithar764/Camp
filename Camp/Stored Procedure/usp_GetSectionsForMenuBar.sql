@@ -3,46 +3,36 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-	SELECT DISTINCT @user_id [user_id]
-		,s.section_id
-		,s.section_name
-	FROM Camp.App_Section_Mapping ASM
-	JOIN Camp.Section S ON ASM.Section_id = S.Section_id
-	JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
-	WHERE ASM.is_active = 1
-		AND AC.is_active = 1
-		AND S.section_id IN (
-			SELECT [section_id]
-			FROM Camp.Section
-			WHERE [section_name] IN (
-					'Arus Internals'
-					,'All Apps'
-					)
-				AND [is_active] = 1
-			)
-	
-	UNION
-	
-	SELECT DISTINCT U.[user_id]
-		,s.section_id
-		,s.section_name
-	FROM Camp.[user] U
-	JOIN [Camp].[User_AppSection_Mapping] uasm ON uasm.[user_id] = u.[user_id]
-	JOIN Camp.App_Section_Mapping ASM ON ASM.section_app_id = uasm.section_app_id
-	JOIN Camp.Section S ON ASM.Section_id = S.Section_id
-	JOIN Camp.App_Catalog AC ON AC.app_id = ASM.app_id
-	WHERE u.[user_id] = @user_id
-		AND S.is_active = 1
-		AND ASM.is_active = 1
-		AND AC.is_active = 1
-		AND UASM.[is_active] = 1
+		WITH Defaults AS (
+			SELECT 
+				s.section_id,
+				s.section_name
+			FROM Camp.Section AS s 
+			WHERE s.section_id IN (1, 2)
+		),
+		UserApps AS (
+			SELECT DISTINCT
+				s.section_id,
+				s.section_name
+			FROM camp.App_Catalog AS ac
 
-	UNION 
-	 
-	 SELECT DISTINCT @user_id [user_id]
-			, Section_id 
-			,Section_name
-			FROM Camp.Section 
-		    WHERE Section_id = 1
+			JOIN camp.Section AS s 
+			ON s.section_id = ac.section_id
 
+			JOIN camp.User_AppSection_Mapping AS am
+			ON ac.app_id = am.app_id
+
+			WHERE am.is_active = 1 
+			  AND s.is_active = 1
+			  AND am.user_id = @user_id
+		)
+		SELECT section_id, section_name
+		FROM Defaults
+
+		UNION
+
+		SELECT section_id, section_name
+		FROM UserApps AS u
+
+		ORDER BY section_name
 END;

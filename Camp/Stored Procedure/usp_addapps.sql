@@ -1,92 +1,64 @@
-CREATE PROCEDURE [Camp].[usp_addapps] (
-	@appname VARCHAR(50)
-	,@iconurl NVARCHAR(MAX)
-	,@appurl NVARCHAR(MAX)
+CREATE PROCEDURE Camp.usp_addapps
+	 @appname VARCHAR(50) 
+	,@iconurl NVARCHAR(MAX) 
+	,@appurl NVARCHAR(MAX) 
 	,@description NVARCHAR(MAX)
-	,@Section_id INT
-	,@result SMALLINT OUTPUT
-	)
+	,@Section_id INT 
 AS
-BEGIN
-	SET NOCOUNT ON;-- This helps prevent extra result sets from interfering with SELECT statements.
+BEGIN 
+	SET NOCOUNT ON;
 
-	DECLARE @current_date DATETIME = GETDATE();
+	DECLARE @current_date DATETIME = SWITCHOFFSET(GETDATE(), '+05:30');
 	DECLARE @app_id INT;
-	DECLARE @sectionID_Internal INT = NULL
+	DECLARE @is_default BIT;
 
-	SELECT @sectionID_Internal = [section_id]
-	FROM Camp.Section
-	WHERE [section_name] = 'Arus Internals'
+	SELECT @is_default = CASE WHEN @Section_id = 2 THEN 1 ELSE 0 END 
+	FROM Camp.App_Catalog
 
-	SET @sectionID_Internal = ISNULL(@sectionID_Internal, 0)
+	MERGE INTO Camp.App_Catalog AS t
+	USING (
+		SELECT @appname		AS [app_name],
+		@iconurl			AS icon_url,
+		@appurl				AS app_url,
+		@description		AS [description],
+		@is_default			AS is_default,
+		@current_date		AS last_updated_date,
+		1					AS is_active,
+		@Section_id			AS section_id ) AS s
 
-	-- Check if the app already exists
-	IF NOT EXISTS (
-			SELECT 1
-			FROM [Camp].[App_Catalog]
-			WHERE [app_name] = @appname
-			)
-	BEGIN
-		-- Insert new app into App_Catalog
-		INSERT INTO [Camp].[App_Catalog] (
-			[app_name]
-			,[icon_url]
-			,[app_url]
-			,[description]
-			,[is_default]
-			,[last_updated_date]
-			)
-		VALUES (
-			@appname
-			,@iconurl
-			,@appurl
-			,@description
-			,IIF(@sectionID_Internal = @Section_id, 1, 0)
-			,@current_date
-			);
+	ON t.[app_name] =s.[app_name] 
+	AND  t.app_url = s.app_url
+	
+	WHEN NOT MATCHED THEN
+	INSERT 
+		(
+			[app_name],
+			icon_url,
+			app_url,
+			[description],
+			is_default,
+			last_updated_date,
+			is_active,
+			section_id 
+		)
+	VALUES
+		(
+			s.[app_name],
+			s.icon_url,
+			s.app_url,
+			s.[description],
+			s.is_default,
+			s.last_updated_date,
+			s.is_active,
+			s.section_id 
+		)
+	WHEN MATCHED THEN
+	UPDATE SET
+			t.icon_url			= s.icon_url,
+			t.app_url			= s.app_url,
+			t.[description]		= s.[description],
+			t.is_default		= s.is_default,
+			t.last_updated_date = s.last_updated_date,
+			t.section_id		= s.section_id; 
 
-		SELECT @app_id = [app_id]
-		FROM [Camp].[App_Catalog]
-		WHERE [app_name] = @appname
-
-		-- Update existing mapping in App_Section_Mapping
-		MERGE INTO [Camp].[App_Section_Mapping] AS TARGET
-		USING (
-			SELECT @app_id AS [appid]
-				,@section_id AS [sectionid]
-				,1 AS [isactive]
-			) AS SOURCE
-			ON TARGET.[app_id] = SOURCE.[appid]
-		WHEN MATCHED
-			THEN
-				UPDATE
-				SET TARGET.[section_id] = SOURCE.[sectionid]
-					,TARGET.[last_updated_date] = @current_date
-		WHEN NOT MATCHED
-			THEN
-				INSERT (
-					[section_id]
-					,[app_id]
-					,[last_updated_date]
-					,[is_active]
-					)
-				VALUES (
-					SOURCE.[sectionid]
-					,SOURCE.[appid]
-					,@current_date
-					,SOURCE.[isactive]
-					);
-
-		SET @result = 1
-	END
-	ELSE
-	BEGIN
-		SET @result = - 1
-
-		RAISERROR (
-				'Appname already exists. Please enter new appname..!'
-				,16
-				,1
-				);
-	END
 END;

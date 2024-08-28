@@ -9,7 +9,7 @@ BEGIN
         is_read BIT,
         created_at DATETIME
     );
-
+    
     -- Select the most recent notification for the specified user
     INSERT INTO @RecentNotification
     SELECT TOP 1 
